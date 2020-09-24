@@ -35,9 +35,44 @@
 	"callback": "Wikibase\\LocalMedia\\HookHandlers::onExtensionRegistration",
 
 	"Hooks": {
+		"WikibaseRepoDataTypes": "Wikibase\\LocalMedia\\HookHandlers::onWikibaseRepoDataTypes"
 	},
 
 	"config": {
+	},
+
+	"ResourceFileModulePaths": {
+		"localBasePath": "resources",
+		"remoteExtPath": "WikibaseLocalMedia/resources"
+	},
+
+	"ResourceModules": {
+		"jquery.ui.mediasuggester": {
+			"scripts": [
+				"jquery.ui.mediasuggester.js"
+			],
+			"styles": [
+				"jquery.ui.mediasuggester.css"
+			],
+			"dependencies": [
+				"jquery.ui.suggester",
+				"jquery.ui",
+				"util.highlightSubstring"
+			],
+			"targets": [ "desktop", "mobile" ]
+		},
+		"jquery.valueview.experts.LocalMediaType": {
+			"scripts": [
+				"LocalMediaType.js"
+			],
+			"dependencies": [
+				"jquery.event.special.eachchange",
+				"jquery.ui.mediasuggester",
+				"jquery.valueview.experts.StringValue",
+				"jquery.valueview.Expert"
+			],
+			"targets": [ "desktop", "mobile" ]
+		}
 	},
 
 	"manifest_version": 2

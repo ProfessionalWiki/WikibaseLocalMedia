@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jeroen De Dauw"
+		]
+	},
+	"wblm-name": "Wikibase Local Media",
+	"wblm-desc": "Adds support for local media files to Wikibase via a dedicated data type",
+
+	"datatypes-type-localMedia": "Media file"
+}
