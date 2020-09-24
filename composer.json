@@ -1,0 +1,54 @@
+{
+	"name": "professional-wiki/wikibase-local-media",
+	"type": "mediawiki-extension",
+	"description": "Adds the local media data type to Wikibase",
+	"keywords": [
+		"MediaWiki",
+		"Wikibase",
+		"local media",
+		"localmedia",
+		"images",
+		"files",
+		"datatype",
+		"extension",
+		"wiki",
+		"structured data",
+		"semantic web",
+		"wikidata"
+	],
+	"homepage": "https://github.com/ProfessionalWiki/WikibaseLocalMedia",
+	"license": "GPL-2.0-or-later",
+	"authors": [
+		{
+			"name": "Professional.Wiki",
+			"email": "info@professional.wiki",
+			"homepage": "https://Professional.Wiki",
+			"role": "Creator"
+		},
+		{
+			"name": "Jeroen De Dauw",
+			"email": "jeroendedauw@gmail.com",
+			"homepage": "https://www.EntropyWins.wtf/mediawiki",
+			"role": "Creator and developer"
+		},
+		{
+			"name": "Jonas Kress",
+			"role": "Creator and developer"
+		},
+		{
+			"name": "Wikidata Team",
+			"role": "Author of copied code"
+		}
+	],
+	"support": {
+		"source": "https://github.com/ProfessionalWiki/WikibaseLocalMedia/issues"
+	},
+	"require": {
+		"php": ">=7.3",
+		"composer/installers": "^1.0.1"
+	},
+	"require-dev": {
+		"vimeo/psalm": "dev-master",
+		"phpstan/phpstan": "dev-master"
+	}
+}
