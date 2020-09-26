@@ -20,7 +20,9 @@ Wikibase Local Media was created by [Professional.Wiki] with Funding from [Rhizo
 
 * [PHP] 7.3 or later
 * [MediaWiki] 1.34.x
-* [Wikibase Repository] branch: REL1_34
+* [Wikibase Repository] REL1_34 branch
+
+See the [release notes](#release-notes) for more information on the different versions of this extension.
 
 ## Installation
 
