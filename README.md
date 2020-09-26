@@ -63,7 +63,7 @@ Finally, please consider [sponsoring the project].
 
 ## Release notes
 
-### Version 0.2.0
+### Version 0.2
 
 Released on September 26th 2020
 
