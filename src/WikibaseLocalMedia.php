@@ -7,7 +7,8 @@ namespace Wikibase\LocalMedia;
 use MediaWiki\MediaWikiServices;
 use ValueValidators\ValueValidator;
 use Wikibase\LocalMedia\Services\FormatterBuilder;
-use Wikibase\LocalMedia\Services\LocalMediaRdfBuilder;
+use Wikibase\LocalMedia\Services\LocalMediaRdfBuilder34;
+use Wikibase\LocalMedia\Services\LocalMediaRdfBuilder35;
 use Wikibase\Repo\WikibaseRepo;
 
 class WikibaseLocalMedia {
@@ -43,9 +44,12 @@ class WikibaseLocalMedia {
 		);
 	}
 
-	public function getRdfBuilder(): LocalMediaRdfBuilder {
-		return new LocalMediaRdfBuilder();
-//		return new LocalMediaRdfBuilder( MediaWikiServices::getInstance()->getTitleFactory() );
+	public function getRdfBuilder(): LocalMediaRdfBuilder34 {
+		if ( method_exists( MediaWikiServices::getInstance(), 'getTitleFactory' ) ) {
+			return new LocalMediaRdfBuilder35( MediaWikiServices::getInstance()->getTitleFactory() );
+		}
+
+		return new LocalMediaRdfBuilder34();
 	}
 
 }

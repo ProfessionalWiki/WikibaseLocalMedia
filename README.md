@@ -18,9 +18,9 @@ Wikibase Local Media was created by [Professional.Wiki] with Funding from [Rhizo
 
 ## Platform requirements
 
-* [PHP] 7.3 or later
-* [MediaWiki] 1.34.x
-* [Wikibase Repository] REL1_34 branch
+* [PHP] 7.3 or later, including PHP 8.0
+* [MediaWiki] 1.34 or 1.35
+* [Wikibase Repository] REL1_34 or REL1_35
 
 See the [release notes](#release-notes) for more information on the different versions of this extension.
 
@@ -62,6 +62,13 @@ Finally, please consider [sponsoring the project].
 * JS tests: `index.php?title=Special%3AJavaScriptTest&filter=jquery.ui.mediasuggester`
 
 ## Release notes
+
+### Version 0.2.0
+
+Released on September 26th 2020
+
+* Added support for MediaWiki/Wikibase 1.35
+* The extension is now listed in the Wikibase group on Special:Version
 
 ### Version 0.1
 

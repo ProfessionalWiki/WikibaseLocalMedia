@@ -5,21 +5,12 @@ declare( strict_types = 1 );
 namespace Wikibase\LocalMedia\Services;
 
 use DataValues\DataValue;
-//use TitleFactory;
 use Wikibase\Rdf\Values\ObjectUriRdfBuilder;
 
 /**
- * RDF mapping for local media values.
- *
- * @license GPL-2.0-or-later
+ * MediaWiki 1.34.x
  */
-class LocalMediaRdfBuilder extends ObjectUriRdfBuilder {
-
-//	private $titleFactory;
-//
-//	public function __construct( TitleFactory $titleFactory ) {
-//		$this->titleFactory = $titleFactory;
-//	}
+class LocalMediaRdfBuilder34 extends ObjectUriRdfBuilder {
 
 	/**
 	 * @param DataValue $value
