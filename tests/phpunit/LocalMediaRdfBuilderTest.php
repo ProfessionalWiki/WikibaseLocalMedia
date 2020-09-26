@@ -21,7 +21,8 @@ use Wikimedia\Purtle\NTriplesRdfWriter;
 class LocalMediaRdfBuilderTest extends TestCase {
 
 	public function testAddValue() {
-		$builder = new LocalMediaRdfBuilder( MediaWikiServices::getInstance()->getTitleFactory() );
+//		$builder = new LocalMediaRdfBuilder( MediaWikiServices::getInstance()->getTitleFactory() );
+		$builder = new LocalMediaRdfBuilder();
 
 		$writer = new NTriplesRdfWriter();
 		$writer->prefix( 'www', "http://www/" );
@@ -38,8 +39,10 @@ class LocalMediaRdfBuilderTest extends TestCase {
 		$builder->addValue( $writer, 'acme', 'testing', 'DUMMY', '', $snak );
 		$rdf = $writer->drain();
 
-		$this->assertStringContainsString( 'File:Bunny.jpg', $rdf );
-		$this->assertStringContainsString( $GLOBALS['wgServer'], $rdf );
+//		$this->assertStringContainsString( 'File:Bunny.jpg', $rdf );
+//		$this->assertStringContainsString( $GLOBALS['wgServer'], $rdf );
+		$this->assertContains( 'File:Bunny.jpg', $rdf );
+		$this->assertContains( $GLOBALS['wgServer'], $rdf );
 	}
 
 }

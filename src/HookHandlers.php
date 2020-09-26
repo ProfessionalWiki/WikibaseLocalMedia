@@ -5,7 +5,7 @@ declare( strict_types = 1 );
 namespace Wikibase\LocalMedia;
 
 use ValueFormatters\FormatterOptions;
-use Wikibase\Repo\Rdf\PropertyRdfBuilder;
+use Wikibase\Rdf\PropertyRdfBuilder;
 
 final class HookHandlers {
 

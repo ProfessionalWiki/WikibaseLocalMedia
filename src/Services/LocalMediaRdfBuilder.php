@@ -5,8 +5,8 @@ declare( strict_types = 1 );
 namespace Wikibase\LocalMedia\Services;
 
 use DataValues\DataValue;
-use TitleFactory;
-use Wikibase\Repo\Rdf\Values\ObjectUriRdfBuilder;
+//use TitleFactory;
+use Wikibase\Rdf\Values\ObjectUriRdfBuilder;
 
 /**
  * RDF mapping for local media values.
@@ -15,11 +15,11 @@ use Wikibase\Repo\Rdf\Values\ObjectUriRdfBuilder;
  */
 class LocalMediaRdfBuilder extends ObjectUriRdfBuilder {
 
-	private $titleFactory;
-
-	public function __construct( TitleFactory $titleFactory ) {
-		$this->titleFactory = $titleFactory;
-	}
+//	private $titleFactory;
+//
+//	public function __construct( TitleFactory $titleFactory ) {
+//		$this->titleFactory = $titleFactory;
+//	}
 
 	/**
 	 * @param DataValue $value
@@ -27,7 +27,7 @@ class LocalMediaRdfBuilder extends ObjectUriRdfBuilder {
 	 * @return string the object URI
 	 */
 	protected function getValueUri( DataValue $value ) {
-		return $this->titleFactory->newFromText( $value->getValue(), NS_FILE )->getFullURL();
+		return \Title::newFromText( $value->getValue(), NS_FILE )->getFullURL();
 	}
 
 }

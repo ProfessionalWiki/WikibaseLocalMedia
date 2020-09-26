@@ -44,7 +44,8 @@ class WikibaseLocalMedia {
 	}
 
 	public function getRdfBuilder(): LocalMediaRdfBuilder {
-		return new LocalMediaRdfBuilder( MediaWikiServices::getInstance()->getTitleFactory() );
+		return new LocalMediaRdfBuilder();
+//		return new LocalMediaRdfBuilder( MediaWikiServices::getInstance()->getTitleFactory() );
 	}
 
 }
