@@ -3,7 +3,14 @@
 MediaWiki extension that adds support for local media files to [Wikibase] via a new data type.
 
 Wikibase Local Media was created by [Professional.Wiki] with Funding from [Rhizome].
+
 [Professional.Wiki] provides commercial [Wikibase hosting], [MediaWiki development] and support.
+
+## Screenshot
+
+<a href="https://user-images.githubusercontent.com/146040/94343935-0e10d300-001c-11eb-8ec2-6f86ccf20e2f.png">
+<img src="https://user-images.githubusercontent.com/146040/94343935-0e10d300-001c-11eb-8ec2-6f86ccf20e2f.png" width="500px" title="View image" />
+</a>
 
 ## Platform requirements
 
