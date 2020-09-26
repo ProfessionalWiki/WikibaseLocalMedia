@@ -17,9 +17,9 @@ jobs:
       matrix:
         include:
           - mw: 'REL1_34'
-            php: 7.3
-          - mw: 'REL1_34'
             php: 7.4
+          - mw: 'REL1_34'
+            php: 7.3
 
     runs-on: ubuntu-latest
 
@@ -44,7 +44,7 @@ jobs:
             mediawiki
             !mediawiki/extensions/
             !mediawiki/vendor/
-          key: mw_${{ matrix.mw }}-php${{ matrix.php }}-v20
+          key: mw_${{ matrix.mw }}-php${{ matrix.php }}-v21
 
       - name: Cache Composer cache
         uses: actions/cache@v2
@@ -59,9 +59,7 @@ jobs:
       - name: Install MediaWiki
         if: steps.cache-mediawiki.outputs.cache-hit != 'true'
         working-directory: ~
-        run: |
-          bash EarlyCopy/.github/workflows/installMediaWiki.sh ${{ matrix.mw }}
-          bash EarlyCopy/.github/workflows/installExtensions.sh ${{ matrix.mw }} WikibaseLocalMedia
+        run: bash EarlyCopy/.github/workflows/installMediaWiki.sh ${{ matrix.mw }} WikibaseLocalMedia
 
       - uses: actions/checkout@v2
         with:
