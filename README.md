@@ -42,7 +42,7 @@ COMPOSER=composer.local.json composer require --no-update professional-wiki/wiki
 composer update professional-wiki/wikibase-local-media --no-dev -o
 ```
 
-**Using Git (option 2/2)**
+**Manual download (option 2/2)**
 
 You can also install the extension via git clone or download. Place the `WikibaseLocalMedia` directory into `extensions`.
 
