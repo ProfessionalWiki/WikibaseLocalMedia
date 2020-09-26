@@ -60,8 +60,6 @@ jobs:
         if: steps.cache-mediawiki.outputs.cache-hit != 'true'
         working-directory: ~
         run: |
-          pwd
-          ls -lap
           bash EarlyCopy/.github/workflows/installMediaWiki.sh ${{ matrix.mw }}
           bash EarlyCopy/.github/workflows/installExtensions.sh ${{ matrix.mw }} WikibaseLocalMedia
 

@@ -1,5 +1,9 @@
 # Wikibase Local Media
 
+[![Build Status](https://travis-ci.org/ProfessionalWiki/WikibaseLocalMedia.svg?branch=master)](https://travis-ci.org/ProfessionalWiki/WikibaseLocalMedia)
+[![Latest Stable Version](https://poser.pugx.org/professional-wiki/wikibase-local-media/version.png)](https://packagist.org/packages/professional-wiki/wikibase-local-media)
+[![Download count](https://poser.pugx.org/professional-wiki/wikibase-local-media/d/total.png)](https://packagist.org/packages/professional-wiki/wikibase-local-media)
+
 MediaWiki extension that adds support for local media files to [Wikibase] via a new data type.
 
 Wikibase Local Media was created by [Professional.Wiki] with Funding from [Rhizome].

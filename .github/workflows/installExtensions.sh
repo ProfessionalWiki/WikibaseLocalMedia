@@ -3,9 +3,7 @@
 MW_BRANCH=$1
 EXTENSION_NAME=$2
 
-ls -lap
 cd mediawiki
-ls -lap
 
 cat <<EOT >> composer.local.json
 {
