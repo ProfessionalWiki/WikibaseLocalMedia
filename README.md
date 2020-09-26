@@ -8,8 +8,8 @@ Wikibase Local Media was created by [Professional.Wiki] with Funding from [Rhizo
 ## Platform requirements
 
 * [PHP] 7.3 or later
-* [MediaWiki] 1.35.x
-* [Wikibase Repository] branch: REL1_35
+* [MediaWiki] 1.34.x
+* [Wikibase Repository] branch: REL1_34
 
 ## Installation
 

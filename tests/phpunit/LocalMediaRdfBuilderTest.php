@@ -36,7 +36,8 @@ class LocalMediaRdfBuilderTest extends TestCase {
 			new StringValue( 'Bunny.jpg' )
 		);
 
-		$builder->addValue( $writer, 'acme', 'testing', 'DUMMY', '', $snak );
+//		$builder->addValue( $writer, 'acme', 'testing', 'DUMMY', '', $snak );
+		$builder->addValue( $writer, 'acme', 'testing', 'DUMMY', $snak );
 		$rdf = $writer->drain();
 
 //		$this->assertStringContainsString( 'File:Bunny.jpg', $rdf );

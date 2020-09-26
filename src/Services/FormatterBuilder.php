@@ -8,8 +8,6 @@ use RequestContext;
 use ValueFormatters\FormatterOptions;
 use ValueFormatters\ValueFormatter;
 use Wikibase\Lib\Formatters\CommonsThumbnailFormatter;
-use Wikibase\Lib\Formatters\ImageLinkFormatter;
-use Wikibase\Lib\Formatters\InlineImageFormatter;
 use Wikibase\Lib\Formatters\SnakFormat;
 use Wikibase\Lib\Formatters\SnakFormatter;
 use Wikibase\Lib\Formatters\WikibaseValueFormatterBuilders;
