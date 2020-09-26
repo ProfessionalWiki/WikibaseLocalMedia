@@ -28,6 +28,8 @@ See the [release notes](#release-notes) for more information on the different ve
 
 First install MediaWiki and Wikibase Repository.
 
+**Using Composer (option 1/2)**
+
 The recommended way to install Wikibase Local Media is using [Composer](https://getcomposer.org) with
 [MediaWiki's built-in support for Composer](https://professional.wiki/en/articles/installing-mediawiki-extensions-with-composer).
 
@@ -38,6 +40,12 @@ COMPOSER=composer.local.json composer require --no-update professional-wiki/wiki
 composer update professional-wiki/wikibase-local-media --no-dev -o
 ```
 
+**Using Git (option 2/2)**
+
+You can also install the extension via git clone or download. Place the `WikibaseLocalMedia` directory into `extensions`.
+
+**Enabling the extension**
+
 Then enable the extension by adding the following to the bottom of your wikis `LocalSettings.php` file:
 
 ```php
@@ -45,6 +53,8 @@ wfLoadExtension( 'WikibaseLocalMedia' );
 ```
 
 You can verify the extension was enabled successfully by opening your wikis Special:Version page in your browser.
+
+Finally, please consider [sponsoring the project].
 
 ## Running the tests
 
@@ -68,3 +78,4 @@ Released on September 26th 2020
 [LocalSettings.php]: https://www.mediawiki.org/wiki/Manual:LocalSettings.php
 [MediaWiki development]: https://professional.wiki/en/mediawiki-development
 [Wikibase hosting]: https://professional.wiki/en/hosting/wikibase
+[sponsoring the project]: https://github.com/sponsors/JeroenDeDauw
