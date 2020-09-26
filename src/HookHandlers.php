@@ -5,6 +5,7 @@ declare( strict_types = 1 );
 namespace Wikibase\LocalMedia;
 
 use ValueFormatters\FormatterOptions;
+use Wikibase\Client\WikibaseClient;
 use Wikibase\Rdf\PropertyRdfBuilder;
 
 final class HookHandlers {
@@ -28,6 +29,14 @@ final class HookHandlers {
 			},
 			'rdf-data-type' => function() {
 				return PropertyRdfBuilder::OBJECT_PROPERTY;
+			},
+		];
+	}
+
+	public static function onWikibaseClientDataTypes( array &$dataTypeDefinitions ): void {
+		$dataTypeDefinitions['PT:localMedia'] = [
+			'formatter-factory-callback' => function( $format, FormatterOptions $options ) {
+				return WikibaseLocalMedia::getGlobalInstance()->getFormatterBuilder()->newFormatter( $format, $options );
 			},
 		];
 	}

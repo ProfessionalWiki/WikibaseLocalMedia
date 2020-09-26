@@ -35,7 +35,8 @@
 	"callback": "Wikibase\\LocalMedia\\HookHandlers::onExtensionRegistration",
 
 	"Hooks": {
-		"WikibaseRepoDataTypes": "Wikibase\\LocalMedia\\HookHandlers::onWikibaseRepoDataTypes"
+		"WikibaseRepoDataTypes": "Wikibase\\LocalMedia\\HookHandlers::onWikibaseRepoDataTypes",
+		"WikibaseClientDataTypes": "Wikibase\\LocalMedia\\HookHandlers::onWikibaseClientDataTypes"
 	},
 
 	"config": {
