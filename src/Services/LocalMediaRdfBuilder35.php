@@ -9,11 +9,9 @@ use TitleFactory;
 use Wikibase\Repo\Rdf\Values\ObjectUriRdfBuilder;
 
 /**
- * RDF mapping for local media values.
- *
- * @license GPL-2.0-or-later
+ * MediaWiki 1.35+
  */
-class LocalMediaRdfBuilder extends ObjectUriRdfBuilder {
+class LocalMediaRdfBuilder35 extends ObjectUriRdfBuilder {
 
 	private $titleFactory;
 

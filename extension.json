@@ -1,7 +1,8 @@
 {
 	"name": "Wikibase Local Media",
+	"type": "wikibase",
 
-	"version": "0.1.0",
+	"version": "0.2.0",
 
 	"author": [
 		"[https://www.entropywins.wtf/mediawiki Jeroen De Dauw]",
@@ -35,7 +36,8 @@
 	"callback": "Wikibase\\LocalMedia\\HookHandlers::onExtensionRegistration",
 
 	"Hooks": {
-		"WikibaseRepoDataTypes": "Wikibase\\LocalMedia\\HookHandlers::onWikibaseRepoDataTypes"
+		"WikibaseRepoDataTypes": "Wikibase\\LocalMedia\\HookHandlers::onWikibaseRepoDataTypes",
+		"WikibaseClientDataTypes": "Wikibase\\LocalMedia\\HookHandlers::onWikibaseClientDataTypes"
 	},
 
 	"config": {
@@ -73,6 +75,17 @@
 			],
 			"targets": [ "desktop", "mobile" ]
 		}
+	},
+
+	"QUnitTestModule": {
+		"localBasePath": "tests/js",
+		"remoteExtPath": "WikibaseLocalMedia/tests/js",
+		"scripts": [
+			"jquery.ui.mediasuggester.tests.js"
+		],
+		"dependencies": [
+			"jquery.ui.mediasuggester"
+		]
 	},
 
 	"manifest_version": 2
