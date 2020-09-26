@@ -9,7 +9,7 @@ Wikibase Local Media was created by [Professional.Wiki] with Funding from [Rhizo
 ## Screenshot
 
 <a href="https://user-images.githubusercontent.com/146040/94343935-0e10d300-001c-11eb-8ec2-6f86ccf20e2f.png">
-<img src="https://user-images.githubusercontent.com/146040/94343935-0e10d300-001c-11eb-8ec2-6f86ccf20e2f.png" width="700px" title="View image" />
+<img src="https://user-images.githubusercontent.com/146040/94343935-0e10d300-001c-11eb-8ec2-6f86ccf20e2f.png" width="800px" title="View image" />
 </a>
 
 ## Platform requirements
