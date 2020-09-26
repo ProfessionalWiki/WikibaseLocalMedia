@@ -1,6 +1,6 @@
 # Wikibase Local Media
 
-[![Build Status](https://travis-ci.org/ProfessionalWiki/WikibaseLocalMedia.svg?branch=master)](https://travis-ci.org/ProfessionalWiki/WikibaseLocalMedia)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/ProfessionalWiki/WikibaseLocalMedia/CI)](https://github.com/ProfessionalWiki/WikibaseLocalMedia/actions?query=workflow%3ACI)
 [![Latest Stable Version](https://poser.pugx.org/professional-wiki/wikibase-local-media/version.png)](https://packagist.org/packages/professional-wiki/wikibase-local-media)
 [![Download count](https://poser.pugx.org/professional-wiki/wikibase-local-media/d/total.png)](https://packagist.org/packages/professional-wiki/wikibase-local-media)
 
