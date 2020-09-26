@@ -9,11 +9,11 @@ use MediaWiki\MediaWikiServices;
 use PHPUnit\Framework\TestCase;
 use Wikibase\DataModel\Entity\PropertyId;
 use Wikibase\DataModel\Snak\PropertyValueSnak;
-use Wikibase\LocalMedia\Services\LocalMediaRdfBuilder;
+use Wikibase\LocalMedia\Services\LocalMediaRdfBuilder35;
 use Wikimedia\Purtle\NTriplesRdfWriter;
 
 /**
- * @covers \Wikibase\LocalMedia\Services\LocalMediaRdfBuilder
+ * @covers \Wikibase\LocalMedia\Services\LocalMediaRdfBuilder35
  * @group Wikibase
  * @group WikibaseRdf
  * @license GPL-2.0-or-later
@@ -21,8 +21,11 @@ use Wikimedia\Purtle\NTriplesRdfWriter;
 class LocalMediaRdfBuilderTest extends TestCase {
 
 	public function testAddValue() {
-//		$builder = new LocalMediaRdfBuilder( MediaWikiServices::getInstance()->getTitleFactory() );
-		$builder = new LocalMediaRdfBuilder();
+		if ( !method_exists( MediaWikiServices::getInstance(), 'getTitleFactory' ) ) {
+			$this->markTestSkipped( 'Need MW 1.35+' );
+		}
+
+		$builder = new LocalMediaRdfBuilder35( MediaWikiServices::getInstance()->getTitleFactory() );
 
 		$writer = new NTriplesRdfWriter();
 		$writer->prefix( 'www', "http://www/" );
@@ -36,14 +39,11 @@ class LocalMediaRdfBuilderTest extends TestCase {
 			new StringValue( 'Bunny.jpg' )
 		);
 
-//		$builder->addValue( $writer, 'acme', 'testing', 'DUMMY', '', $snak );
-		$builder->addValue( $writer, 'acme', 'testing', 'DUMMY', $snak );
+		$builder->addValue( $writer, 'acme', 'testing', 'DUMMY', '', $snak );
 		$rdf = $writer->drain();
 
-//		$this->assertStringContainsString( 'File:Bunny.jpg', $rdf );
-//		$this->assertStringContainsString( $GLOBALS['wgServer'], $rdf );
-		$this->assertContains( 'File:Bunny.jpg', $rdf );
-		$this->assertContains( $GLOBALS['wgServer'], $rdf );
+		$this->assertStringContainsString( 'File:Bunny.jpg', $rdf );
+		$this->assertStringContainsString( $GLOBALS['wgServer'], $rdf );
 	}
 
 }

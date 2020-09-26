@@ -16,10 +16,18 @@ class ImageLinkFormatterTest extends \MediaWikiTestCase {
 	public function testCssClass() {
 		$formatter = new ImageLinkFormatter( new LocalImageLinker(), 'kittens' );
 
-		$this->assertContains(
-			'class="kittens"',
-			$formatter->format( new StringValue( 'MyImage.png' ) )
-		);
+		if ( method_exists( $this, 'assertStringContainsString' ) ) {
+			$this->assertStringContainsString(
+				'class="kittens"',
+				$formatter->format( new StringValue( 'MyImage.png' ) )
+			);
+		}
+		else {
+			$this->assertContains(
+				'class="kittens"',
+				$formatter->format( new StringValue( 'MyImage.png' ) )
+			);
+		}
 	}
 
 }
