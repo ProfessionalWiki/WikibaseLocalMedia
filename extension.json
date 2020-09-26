@@ -75,5 +75,16 @@
 		}
 	},
 
+	"QUnitTestModule": {
+		"localBasePath": "tests/js",
+		"remoteExtPath": "WikibaseLocalMedia/tests/js",
+		"scripts": [
+			"jquery.ui.mediasuggester.tests.js"
+		],
+		"dependencies": [
+			"jquery.ui.mediasuggester"
+		]
+	},
+
 	"manifest_version": 2
 }
