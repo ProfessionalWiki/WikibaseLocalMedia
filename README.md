@@ -33,18 +33,18 @@ wfLoadExtension( 'WikibaseLocalMedia' );
 
 You can verify the extension was enabled successfully by opening your wikis Special:Version page in your browser.
 
+## Running the tests
 
-## Configuration
-
-You can configure Wikibase Local Media via [LocalSettings.php].
+* PHP tests: `php tests/phpunit/phpunit.php extensions/WikibaseLocalMedia/tests/`
+* JS tests: `index.php?title=Special%3AJavaScriptTest&filter=jquery.ui.mediasuggester`
 
 ## Release notes
 
 ### Version 0.1
 
-Under development
+Released on September 26th 2020
 
-* Initial release
+* Initial release for MediaWiki/Wikibase 1.34
 
 [Professional.Wiki]: https://professional.wiki
 [Wikibase]: https://wikiba.se
