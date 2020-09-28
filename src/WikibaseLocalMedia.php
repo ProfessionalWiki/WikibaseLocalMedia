@@ -13,7 +13,7 @@ use Wikibase\Repo\WikibaseRepo;
 
 class WikibaseLocalMedia {
 
-	protected static ?self $instance;
+	protected static /* ?self */ $instance;
 
 	public static function getGlobalInstance(): self {
 		if ( !isset( self::$instance ) ) {
@@ -44,7 +44,7 @@ class WikibaseLocalMedia {
 		);
 	}
 
-	public function getRdfBuilder(): LocalMediaRdfBuilder34 {
+	public function getRdfBuilder() {
 		if ( method_exists( MediaWikiServices::getInstance(), 'getTitleFactory' ) ) {
 			return new LocalMediaRdfBuilder35( MediaWikiServices::getInstance()->getTitleFactory() );
 		}

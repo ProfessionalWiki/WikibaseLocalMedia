@@ -65,6 +65,12 @@ Finally, please consider [sponsoring the project].
 
 ## Release notes
 
+### Version 0.2.1
+
+Released on September 28th 2020
+
+* Fixed support for PHP 7.3.x
+
 ### Version 0.2
 
 Released on September 26th 2020
