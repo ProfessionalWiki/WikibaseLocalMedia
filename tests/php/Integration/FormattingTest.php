@@ -7,6 +7,7 @@ namespace Wikibase\LocalMedia\Tests\Integration;
 use DataValues\StringValue;
 use PHPUnit\Framework\TestCase;
 use ValueFormatters\FormatterOptions;
+use ValueFormatters\ValueFormatter;
 use Wikibase\Lib\Formatters\SnakFormatter;
 use Wikibase\LocalMedia\WikibaseLocalMedia;
 
@@ -20,10 +21,7 @@ class FormattingTest extends TestCase {
 	 * @dataProvider formattingProvider
 	 */
 	public function testFormatting( string $format, string $expected ) {
-		$formatter = WikibaseLocalMedia::getGlobalInstance()->getFormatterBuilder()->newFormatter(
-			$format,
-			$this->newOptions()
-		);
+		$formatter = $this->newFormatterForFormat( $format );
 
 		$this->assertEquals(
 			$expected,
@@ -36,6 +34,13 @@ class FormattingTest extends TestCase {
 		yield [ SnakFormatter::FORMAT_PLAIN, 'Jonas-revenge.png' ];
 	}
 
+	private function newFormatterForFormat( string $format ): ValueFormatter {
+		return $formatter = WikibaseLocalMedia::getGlobalInstance()->getFormatterBuilder()->newFormatter(
+			$format,
+			$this->newOptions()
+		);
+	}
+
 	private function newOptions(): FormatterOptions {
 		return new FormatterOptions( [ 'lang' => 'en' ] );
 	}
@@ -45,15 +50,12 @@ class FormattingTest extends TestCase {
 			$this->markTestSkipped();
 		}
 
-		$formatter = WikibaseLocalMedia::getGlobalInstance()->getFormatterBuilder()->newFormatter(
-			SnakFormatter::FORMAT_HTML_VERBOSE,
-			$this->newOptions()
-		);
+		$formatter = $this->newFormatterForFormat( SnakFormatter::FORMAT_HTML_VERBOSE );
 
 		$html = $formatter->format( new StringValue( 'ValidImageThatDoesNotExist.png' ) );
 
 		$this->assertStringContainsString( '<div class="commons-media-caption">', $html );
-		$this->assertStringContainsString( 'href="//', $html );
+		$this->assertStringContainsString( 'href="', $html );
 		$this->assertStringContainsString( 'ValidImageThatDoesNotExist.png', $html );
 	}
 
