@@ -65,6 +65,10 @@ Finally, please consider [sponsoring the project].
 
 ## Release notes
 
+Released on September 29th 2020
+
+* Added optional integration with Wikibase Client
+
 ### Version 0.2.1
 
 Released on September 28th 2020
@@ -76,7 +80,6 @@ Released on September 28th 2020
 Released on September 26th 2020
 
 * Added support for MediaWiki/Wikibase 1.35
-* Added optional integration with Wikibase Client
 * The extension is now listed in the Wikibase group on Special:Version
 
 ### Version 0.1

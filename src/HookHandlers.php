@@ -37,6 +37,7 @@ final class HookHandlers {
 
 	public static function onWikibaseClientDataTypes( array &$dataTypeDefinitions ): void {
 		$dataTypeDefinitions['PT:localMedia'] = [
+			'value-type' => 'string',
 			'formatter-factory-callback' => function( $format, FormatterOptions $options ) {
 				return WikibaseLocalMedia::getGlobalInstance()->getFormatterBuilder()->newFormatter( $format, $options );
 			},
