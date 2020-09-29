@@ -10,6 +10,7 @@ use PHPUnit\Framework\TestCase;
 use Wikibase\DataModel\Entity\PropertyId;
 use Wikibase\DataModel\Snak\PropertyValueSnak;
 use Wikibase\LocalMedia\Services\LocalMediaRdfBuilder35;
+use Wikibase\LocalMedia\WikibaseLocalMedia;
 use Wikimedia\Purtle\NTriplesRdfWriter;
 
 /**
@@ -44,6 +45,11 @@ class LocalMediaRdfBuilderTest extends TestCase {
 
 		$this->assertStringContainsString( 'File:Bunny.jpg', $rdf );
 		$this->assertStringContainsString( $GLOBALS['wgServer'], $rdf );
+	}
+
+	public function testGetRdfBuilder() {
+		WikibaseLocalMedia::getGlobalInstance()->getRdfBuilder();
+		$this->assertTrue( true );
 	}
 
 }
