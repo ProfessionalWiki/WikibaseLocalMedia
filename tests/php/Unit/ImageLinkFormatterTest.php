@@ -2,7 +2,7 @@
 
 declare( strict_types = 1 );
 
-namespace Wikibase\LocalMedia\Tests;
+namespace Wikibase\LocalMedia\Tests\Unit;
 
 use DataValues\StringValue;
 use Wikibase\LocalMedia\Services\ImageLinkFormatter;
