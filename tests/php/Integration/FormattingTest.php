@@ -10,6 +10,10 @@ use ValueFormatters\FormatterOptions;
 use Wikibase\Lib\Formatters\SnakFormatter;
 use Wikibase\LocalMedia\WikibaseLocalMedia;
 
+/**
+ * @covers \Wikibase\LocalMedia\WikibaseLocalMedia
+ * @covers \Wikibase\LocalMedia\Services\FormatterBuilder
+ */
 class FormattingTest extends TestCase {
 
 	/**
@@ -18,7 +22,7 @@ class FormattingTest extends TestCase {
 	public function testFormatting( string $format, string $expected ) {
 		$formatter = WikibaseLocalMedia::getGlobalInstance()->getFormatterBuilder()->newFormatter(
 			$format,
-			new FormatterOptions()
+			$this->newOptions()
 		);
 
 		$this->assertEquals(
@@ -30,6 +34,27 @@ class FormattingTest extends TestCase {
 	public function formattingProvider() {
 		yield [ SnakFormatter::FORMAT_WIKI, '[[File:Jonas-revenge.png|frameless]]' ];
 		yield [ SnakFormatter::FORMAT_PLAIN, 'Jonas-revenge.png' ];
+	}
+
+	private function newOptions(): FormatterOptions {
+		return new FormatterOptions( [ 'lang' => 'en' ] );
+	}
+
+	public function testHtmlFormat() {
+		if ( !method_exists( $this, 'assertStringContainsString' ) ) {
+			$this->markTestSkipped();
+		}
+
+		$formatter = WikibaseLocalMedia::getGlobalInstance()->getFormatterBuilder()->newFormatter(
+			SnakFormatter::FORMAT_HTML_VERBOSE,
+			$this->newOptions()
+		);
+
+		$html = $formatter->format( new StringValue( 'ValidImageThatDoesNotExist.png' ) );
+
+		$this->assertStringContainsString( '<div class="commons-media-caption">', $html );
+		$this->assertStringContainsString( 'href="//', $html );
+		$this->assertStringContainsString( 'ValidImageThatDoesNotExist.png', $html );
 	}
 
 }
