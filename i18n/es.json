@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Fitoschido"
+		]
+	},
+	"wblm-desc": "Permite añadir archivos multimedia locales a Wikibase a través de un tipo de datos especializado",
+	"datatypes-type-localMedia": "Archivo multimedia"
+}

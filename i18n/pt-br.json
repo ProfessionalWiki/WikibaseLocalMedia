@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eduardo Addad de Oliveira"
+		]
+	},
+	"wblm-desc": "Adiciona suporte para arquivos de mídia local à Wikibase por meio de um tipo de dados dedicado",
+	"datatypes-type-localMedia": "Arquivo de mídia"
+}
