@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"MuratTheTurkish"
+		]
+	},
+	"wblm-desc": "Özel bir veri türü üzerinden Wikibase'e yerel medya dosyaları için destek ekler",
+	"datatypes-type-localMedia": "Medya dosyası"
+}

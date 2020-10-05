@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kly"
+		]
+	},
+	"wblm-desc": "通過專用資料類型，添加本地端多媒體檔案的支援到 Wikibase",
+	"datatypes-type-localMedia": "多媒體檔案"
+}
