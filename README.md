@@ -13,7 +13,6 @@ Wikibase Local Media was created by [Professional.Wiki] with Funding from [Rhizo
 ## Demo and screenshot
 
 <a href="https://www.youtube.com/watch?v=mK-zdazdH78"><img src=".github/youtube.png" width="400px" title="Play video" /></a>
-
 <a href="https://user-images.githubusercontent.com/146040/94343935-0e10d300-001c-11eb-8ec2-6f86ccf20e2f.png">
 <img src="https://user-images.githubusercontent.com/146040/94343935-0e10d300-001c-11eb-8ec2-6f86ccf20e2f.png" width="400px" title="View image" />
 </a>
