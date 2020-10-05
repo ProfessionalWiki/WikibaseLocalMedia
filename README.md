@@ -67,7 +67,7 @@ Finally, please consider [sponsoring the project].
 
 ### Version 1.0.0
 
-Released on September 29th 2020
+Released on October 5th 2020
 
 * Added optional integration with Wikibase Client
 
