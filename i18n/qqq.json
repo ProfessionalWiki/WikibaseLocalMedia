@@ -4,6 +4,6 @@
 			"Jeroen De Dauw"
 		]
 	},
-	"semantic-wb-name": "{{Name}}",
-	"semantic-wb-desc": "{{Desc|name=Wikibase Local Media|url=https://github.com/ProfessionalWiki/WikibaseLocalMedia}}"
+	"wblm-name": "{{Name}}",
+	"wblm-desc": "{{Desc|name=Wikibase Local Media|url=https://github.com/ProfessionalWiki/WikibaseLocalMedia}}"
 }
