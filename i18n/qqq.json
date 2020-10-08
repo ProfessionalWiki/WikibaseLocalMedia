@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Jeroen De Dauw"
+			"Jeroen De Dauw",
+			"Kghbln"
 		]
 	},
 	"wblm-name": "{{Name}}",
-	"wblm-desc": "{{Desc|name=Wikibase Local Media|url=https://github.com/ProfessionalWiki/WikibaseLocalMedia}}"
+	"wblm-desc": "{{Desc|name=Wikibase Local Media|url=https://github.com/ProfessionalWiki/WikibaseLocalMedia}}",
+	"datatypes-type-localMedia": "This is the name of the datatype."
 }

@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"Kghbln",
 			"Killarnee"
 		]
 	},
-	"datatypes-type-localMedia": "Mediadatei"
+	"wblm-desc": "Ermöglicht Wikibase die Nutzung lokaler Mediendateien mithilfe eines eigenen Datentyps",
+	"datatypes-type-localMedia": "Mediendatei"
 }
