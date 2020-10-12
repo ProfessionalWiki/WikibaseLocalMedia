@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jon Harald Søby"
+		]
+	},
+	"wblm-desc": "Legger til støtte for lokale mediefiler i Wikibase via en dedikert datatype",
+	"datatypes-type-localMedia": "Mediefil"
+}
