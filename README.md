@@ -92,7 +92,7 @@ Released on September 26th 2020
 * Initial release for MediaWiki/Wikibase 1.34
 
 [Professional.Wiki]: https://professional.wiki
-[Wikibase]: https://wikiba.se
+[Wikibase]: https://wikibase.consulting/what-is-wikibase/
 [Rhizome]: https://rhizome.org/
 [MediaWiki]: https://www.mediawiki.org
 [PHP]: https://www.php.net
