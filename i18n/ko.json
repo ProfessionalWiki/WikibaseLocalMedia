@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"Kwj2772",
 			"Ykhwong"
 		]
 	},
+	"wblm-desc": "전용 데이터 유형을 통해 위키베이스에 로컬 미디어 파일에 대한 지원 기능을 추가합니다",
 	"datatypes-type-localMedia": "미디어 파일"
 }
