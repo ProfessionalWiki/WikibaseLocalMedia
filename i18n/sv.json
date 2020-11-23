@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"Sabelöga",
 			"WikiPhoenix"
 		]
 	},
+	"wblm-desc": "Lägger till stöd för lokala mediefiler i Wikibase via en dedikerad datatyp",
 	"datatypes-type-localMedia": "Mediafil"
 }
