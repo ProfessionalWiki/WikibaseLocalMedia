@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joetaras"
+		]
+	},
+	"wblm-desc": "Aggiunge 'u supporte pe le file media locale a Uicchibase cu 'nu tipe de date dedicate",
+	"datatypes-type-localMedia": "File multimediale"
+}
