@@ -18,6 +18,7 @@ echo 'ini_set("display_errors", 1);' >> LocalSettings.php
 echo '$wgShowExceptionDetails = true;' >> LocalSettings.php
 echo '$wgShowDBErrorBacktrace = true;' >> LocalSettings.php
 echo '$wgDevelopmentWarnings = true;' >> LocalSettings.php
+echo '$wgServer = "http://localhost";' >> LocalSettings.php
 
 echo '$wgEnableWikibaseRepo = true;' >> LocalSettings.php
 echo '$wgEnableWikibaseClient = false;' >> LocalSettings.php
