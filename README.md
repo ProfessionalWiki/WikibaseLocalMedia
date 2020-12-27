@@ -90,7 +90,7 @@ Released on September 26th 2020
 
 Released on September 26th 2020
 
-* Initial release for MediaWiki/Wikibase 1.34
+* [Initial release] for MediaWiki/Wikibase 1.34
 
 [Professional.Wiki]: https://professional.wiki
 [Wikibase]: https://wikibase.consulting/what-is-wikibase/
@@ -102,3 +102,4 @@ Released on September 26th 2020
 [MediaWiki development]: https://professional.wiki/en/mediawiki-development
 [Wikibase hosting]: https://professional.wiki/en/hosting/wikibase
 [sponsoring the project]: https://github.com/sponsors/JeroenDeDauw
+[Initial release]: https://professional.wiki/en/news/wikibase-local-media
