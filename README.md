@@ -67,6 +67,12 @@ Finally, please consider [sponsoring the project].
 
 ## Release notes
 
+### Version 1.0.1
+
+Released on March 17th 2021
+
+* Allowed installation with PHP 7.2.x
+
 ### Version 1.0.0
 
 Released on October 5th 2020
