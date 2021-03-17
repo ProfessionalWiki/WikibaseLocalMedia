@@ -22,7 +22,7 @@ Also see [this animated gif](https://twitter.com/i/status/1286293710112731137).
 
 ## Platform requirements
 
-* [PHP] 7.3 or later, including PHP 8.0
+* [PHP] 7.2 or later, including PHP 8.0
 * [MediaWiki] 1.34 or 1.35
 * [Wikibase Repository] REL1_34 or REL1_35
 
