@@ -8,10 +8,6 @@ use ValueFormatters\FormatterOptions;
 
 final class HookHandlers {
 
-	public static function onExtensionRegistration(): void {
-
-	}
-
 	public static function onWikibaseRepoDataTypes( array &$dataTypeDefinitions ): void {
 		$dataTypeDefinitions['PT:localMedia'] = [
 			'value-type' => 'string',
