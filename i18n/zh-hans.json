@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Shizhao"
+		]
+	},
+	"wblm-desc": "通过专用数据类型向Wikibase添加对本地媒体文件的支持",
+	"datatypes-type-localMedia": "媒体文件"
+}
