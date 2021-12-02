@@ -39,7 +39,7 @@ class WikibaseLocalMedia {
 
 	public function getFormatterBuilder(): FormatterBuilder {
 		return new FormatterBuilder(
-			WikibaseRepo::getDefaultInstance()->getDefaultValueFormatterBuilders(),
+			WikibaseRepo::getDefaultValueFormatterBuilders(),
 			$GLOBALS['wgThumbLimits']
 		);
 	}
