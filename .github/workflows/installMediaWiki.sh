@@ -19,6 +19,7 @@ echo '$wgShowExceptionDetails = true;' >> LocalSettings.php
 echo '$wgShowDBErrorBacktrace = true;' >> LocalSettings.php
 echo '$wgDevelopmentWarnings = true;' >> LocalSettings.php
 echo '$wgServer = "http://localhost";' >> LocalSettings.php
+echo '$wgDeprecationReleaseLimit = "1.34";' >> LocalSettings.php
 
 echo '$wgEnableWikibaseRepo = true;' >> LocalSettings.php
 echo '$wgEnableWikibaseClient = false;' >> LocalSettings.php
