@@ -1,9 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Gomoko"
+			"Gomoko",
+			"Verdy p"
 		]
 	},
-	"wblm-desc": "Ajoute le support pour les fichiers média locaux vers Wikibase via un type de données dédié",
+	"wblm-desc": "Ajoute la prise en charge des fichiers de médias locaux vers Wikibase via un type de données dédié",
 	"datatypes-type-localMedia": "Fichier de média"
 }
