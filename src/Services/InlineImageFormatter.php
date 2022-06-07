@@ -10,6 +10,7 @@ use Html;
 use InvalidArgumentException;
 use Language;
 use Linker;
+use MediaWiki\MediaWikiServices;
 use ParserOptions;
 use RepoGroup;
 use Title;
@@ -28,11 +29,6 @@ class InlineImageFormatter implements ValueFormatter {
 	 * @var Language
 	 */
 	private $language;
-
-	/**
-	 * @var RepoGroup
-	 */
-	private $repoGroup;
 
 	/**
 	 * @var ParserOptions
@@ -60,7 +56,6 @@ class InlineImageFormatter implements ValueFormatter {
 	 * @param string $languageCode
 	 * @param ImageLinker $imageLinker
 	 * @param string $captionCssClass
-	 * @param RepoGroup|null $repoGroup
 	 * @throws \MWException
 	 */
 	public function __construct(
@@ -68,11 +63,9 @@ class InlineImageFormatter implements ValueFormatter {
 		array $thumbLimits,
 		string $languageCode,
 		ImageLinker $imageLinker,
-		string $captionCssClass,
-		RepoGroup $repoGroup = null
+		string $captionCssClass
 	) {
 		$this->language = Language::factory( $languageCode );
-		$this->repoGroup = $repoGroup ?: RepoGroup::singleton();
 		$this->parserOptions = $parserOptions;
 		$this->thumbLimits = $thumbLimits;
 		$this->imageLinker = $imageLinker;
@@ -106,7 +99,9 @@ class InlineImageFormatter implements ValueFormatter {
 			'height' => 1000
 		];
 
-		$file = $this->repoGroup->findFile( $fileName );
+		$repoGroup = MediaWikiServices::getInstance()->getRepoGroup();
+
+		$file = $repoGroup->findFile( $fileName );
 		if ( !$file instanceof File ) {
 			return $this->getCaptionHtml( $title );
 		}
