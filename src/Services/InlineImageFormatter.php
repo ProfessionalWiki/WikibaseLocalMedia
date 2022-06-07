@@ -99,12 +99,7 @@ class InlineImageFormatter implements ValueFormatter {
 			'height' => 1000
 		];
 
-		if ( method_exists( MediaWikiServices::class, 'getRepoGroup' ) ) {
-			// MediaWiki 1.34+
-			$repoGroup = MediaWikiServices::getInstance()->getRepoGroup();
-		} else {
-			$repoGroup = RepoGroup::singleton();
-		}
+		$repoGroup = MediaWikiServices::getInstance()->getRepoGroup();
 
 		$file = $repoGroup->findFile( $fileName );
 		if ( !$file instanceof File ) {
