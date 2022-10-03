@@ -67,6 +67,12 @@ Finally, please consider [sponsoring the project].
 
 ## Release notes
 
+### Version 1.0.2
+
+Released on October 4th 2022
+
+* Added support for MediaWiki and Wikibase 1.37
+
 ### Version 1.0.1
 
 Released on March 17th 2021
