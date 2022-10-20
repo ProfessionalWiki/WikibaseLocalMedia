@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hamilton Abreu"
+		]
+	},
+	"wblm-desc": "Adiciona a Wikibase suporte de ficheiros multimédia locais por meio de um tipo de dados especializado",
+	"datatypes-type-localMedia": "Ficheiro multimédia"
+}
