@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Meno25"
+		]
+	},
+	"wblm-desc": "يضيف دعمًا لملفات الوسائط المحلية إلى Wikibase عبر نوع بيانات مخصص",
+	"datatypes-type-localMedia": "ملف وسائط"
+}
