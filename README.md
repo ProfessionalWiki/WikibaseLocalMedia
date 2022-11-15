@@ -7,9 +7,9 @@
 
 MediaWiki extension that adds support for local media files to [Wikibase] via a new data type.
 
-Wikibase Local Media was created by [Professional.Wiki] with Funding from [Rhizome]. It is an open source project and contributions are welcome!
+[Professional.Wiki] created and maintains Wikibase Local Media. We provide [Wikibase hosting], [Wikibase development] and [Wikibase consulting].
 
-[Professional.Wiki] provides commercial [Wikibase hosting], [MediaWiki development] and support.
+[Rhizome] commissioned and funded creation of the extension. Wikibase Local Media is an open source project and contributions are welcome!
 
 ## Demo and screenshot
 
@@ -106,12 +106,13 @@ Released on September 26th 2020
 
 [Professional.Wiki]: https://professional.wiki
 [Wikibase]: https://wikibase.consulting/what-is-wikibase/
+[Wikibase hosting]: https://professional.wiki/en/hosting/wikibase
+[Wikibase development]: https://www.wikibase.consulting/about-the-wikibase-team/
+[Wikibase consulting]: https://wikibase.consulting/
 [Rhizome]: https://rhizome.org/
 [MediaWiki]: https://www.mediawiki.org
 [PHP]: https://www.php.net
 [Wikibase Repository]: https://www.mediawiki.org/wiki/Extension:Wikibase_Repository
 [LocalSettings.php]: https://www.mediawiki.org/wiki/Manual:LocalSettings.php
-[MediaWiki development]: https://professional.wiki/en/mediawiki-development
-[Wikibase hosting]: https://professional.wiki/en/hosting/wikibase
 [sponsoring the project]: https://github.com/sponsors/JeroenDeDauw
 [Initial release]: https://professional.wiki/en/news/wikibase-local-media
