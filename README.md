@@ -9,7 +9,7 @@ MediaWiki extension that adds support for local media files to [Wikibase] via a 
 
 [Professional.Wiki] created and maintains Wikibase Local Media. We provide [Wikibase hosting], [Wikibase development] and [Wikibase consulting].
 
-[Rhizome] commissioned and funded creation of the extension. Wikibase Local Media is an open source project and contributions are welcome!
+[Rhizome] commissioned and funded initial development of the extension. Wikibase Local Media is an open source project and contributions are welcome!
 
 ## Demo and screenshot
 
