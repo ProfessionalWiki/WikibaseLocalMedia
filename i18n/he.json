@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"YaronSh"
 		]
 	},
+	"wblm-desc": "הוספת תמיכה בקובצי מדיה מקומיים לוויקיבייס באמצעות סוג נתונים ייעודי",
 	"datatypes-type-localMedia": "קובץ מדיה"
 }
