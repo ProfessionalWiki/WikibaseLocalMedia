@@ -1,6 +1,6 @@
 # Wikibase Local Media
 
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/ProfessionalWiki/WikibaseLocalMedia/CI/master)](https://github.com/ProfessionalWiki/WikibaseLocalMedia/actions?query=workflow%3ACI)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/ProfessionalWiki/WikibaseLocalMedia/ci.yml?branch=master)](https://github.com/ProfessionalWiki/WikibaseLocalMedia/actions?query=workflow%3ACI)
 [![Latest Stable Version](https://poser.pugx.org/professional-wiki/wikibase-local-media/version.png)](https://packagist.org/packages/professional-wiki/wikibase-local-media)
 [![Download count](https://poser.pugx.org/professional-wiki/wikibase-local-media/d/total.png)](https://packagist.org/packages/professional-wiki/wikibase-local-media)
 ![GitHub](https://img.shields.io/github/license/ProfessionalWiki/WikibaseLocalMedia)
