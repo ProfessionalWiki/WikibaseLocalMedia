@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"wblm-desc": "Adde supporto pro files multimedial local a Wikibase per medio de un typo de datos dedicate.",
+	"datatypes-type-localMedia": "File multimedial"
+}
