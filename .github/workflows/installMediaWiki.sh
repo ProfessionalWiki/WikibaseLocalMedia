@@ -25,7 +25,7 @@ echo '$wgEnableWikibaseRepo = true;' >> LocalSettings.php
 echo '$wgEnableWikibaseClient = false;' >> LocalSettings.php
 echo 'require_once __DIR__ . "/extensions/Wikibase/repo/ExampleSettings.php";' >> LocalSettings.php
 
-if [ "$MW_BRANCH" == "REL1_34" ]; then
+if [ "$MW_BRANCH" == "REL1_34" ] || [ "$MW_BRANCH" == "REL1_35" ]; then
   echo 'require_once __DIR__ . "/extensions/Wikibase/repo/Wikibase.php";' >> LocalSettings.php
 else
   echo 'wfLoadExtension( "WikibaseRepository", __DIR__ . "/extensions/Wikibase/extension-repo.json" );' >> LocalSettings.php
