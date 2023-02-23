@@ -16,8 +16,10 @@ jobs:
     strategy:
       matrix:
         include:
-#          - mw: 'REL1_38'
-#            php: 8.0
+          - mw: 'REL1_39'
+            php: 8.0
+          - mw: 'REL1_38'
+            php: 8.0
           - mw: 'REL1_37'
             php: 8.0
           - mw: 'REL1_36'
@@ -76,4 +78,3 @@ jobs:
 
       - name: Run PHPUnit
         run: php tests/phpunit/phpunit.php extensions/WikibaseLocalMedia/tests/
-
