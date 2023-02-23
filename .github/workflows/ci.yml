@@ -17,7 +17,7 @@ jobs:
       matrix:
         include:
           - mw: 'REL1_39'
-            php: 8.0
+            php: 8.1
             composer: v2
           - mw: 'REL1_38'
             php: 8.0
