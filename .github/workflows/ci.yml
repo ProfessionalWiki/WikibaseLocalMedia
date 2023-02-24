@@ -16,16 +16,24 @@ jobs:
     strategy:
       matrix:
         include:
-#          - mw: 'REL1_38'
-#            php: 8.0
+          - mw: 'REL1_39'
+            php: 8.0
+            composer: v2
+          - mw: 'REL1_38'
+            php: 8.0
+            composer: v2
           - mw: 'REL1_37'
             php: 8.0
+            composer: v2
           - mw: 'REL1_36'
             php: 7.4
+            composer: v1
           - mw: 'REL1_35'
             php: 7.3
+            composer: v1
           - mw: 'REL1_34'
             php: 7.2
+            composer: v1
 
     runs-on: ubuntu-latest
 
@@ -40,7 +48,7 @@ jobs:
         with:
           php-version: ${{ matrix.php }}
           extensions: mbstring, intl
-          tools: composer:v1
+          tools: composer:${{ matrix.composer }}
 
       - name: Cache MediaWiki
         id: cache-mediawiki
@@ -76,4 +84,3 @@ jobs:
 
       - name: Run PHPUnit
         run: php tests/phpunit/phpunit.php extensions/WikibaseLocalMedia/tests/
-

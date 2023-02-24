@@ -7,6 +7,7 @@ namespace Wikibase\LocalMedia\Tests\Unit;
 use DataValues\StringValue;
 use MediaWiki\MediaWikiServices;
 use PHPUnit\Framework\TestCase;
+use Wikibase\DataModel\Entity\NumericPropertyId;
 use Wikibase\DataModel\Entity\PropertyId;
 use Wikibase\DataModel\Snak\PropertyValueSnak;
 use Wikibase\LocalMedia\Services\LocalMediaRdfBuilder35;
@@ -36,7 +37,10 @@ class LocalMediaRdfBuilderTest extends TestCase {
 		$writer->about( 'www', 'Q42' );
 
 		$snak = new PropertyValueSnak(
-			new PropertyId( 'P1' ),
+			// Wikibase 1.37+
+			class_exists( NumericPropertyId::class ) ?
+				new NumericPropertyId( 'P1' ) :
+				new PropertyId( 'P1' ),
 			new StringValue( 'Bunny.jpg' )
 		);
 
