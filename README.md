@@ -23,8 +23,8 @@ Also see [this animated gif](https://twitter.com/i/status/1286293710112731137).
 ## Platform requirements
 
 * [PHP] 7.2 or later, including PHP 8.0
-* [MediaWiki] 1.34 up to 1.37
-* [Wikibase Repository] REL1_34, REL1_35, REL1_36 or REL1_37
+* [MediaWiki] 1.34 up to 1.39
+* [Wikibase Repository] REL1_34, REL1_35, REL1_36 or REL1_37, REL1_38, REL1_39
 
 See the [release notes](#release-notes) for more information on the different versions of this extension.
 
