@@ -74,7 +74,7 @@ Released on March 30, 2023
 * Added support for MediaWiki and Wikibase 1.38 and 1.39 
 * Translation updates
 
-* ### Version 1.0.2
+### Version 1.0.2
 
 Released on October 4th 2022
 
