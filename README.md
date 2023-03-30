@@ -67,23 +67,33 @@ Finally, please consider [sponsoring the project].
 
 ## Release notes
 
-### Version 1.0.2
+### Version 1.0.3
+
+Released on March 30, 2023
+
+* Added support for MediaWiki and Wikibase 1.38 and 1.39 
+* Translation updates
+
+* ### Version 1.0.2
 
 Released on October 4th 2022
 
 * Added support for MediaWiki and Wikibase 1.37
+* Translation updates
 
 ### Version 1.0.1
 
 Released on March 17th 2021
 
 * Allowed installation with PHP 7.2.x
+* Translation updates
 
 ### Version 1.0.0
 
 Released on October 5th 2020
 
 * Added optional integration with Wikibase Client
+* Translation updates
 
 ### Version 0.2.1
 
