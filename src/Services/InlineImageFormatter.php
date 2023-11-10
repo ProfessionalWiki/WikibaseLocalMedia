@@ -65,7 +65,7 @@ class InlineImageFormatter implements ValueFormatter {
 		ImageLinker $imageLinker,
 		string $captionCssClass
 	) {
-		$this->language = Language::factory( $languageCode );
+		$this->language = MediaWikiServices::getInstance()->getContentLanguage();
 		$this->parserOptions = $parserOptions;
 		$this->thumbLimits = $thumbLimits;
 		$this->imageLinker = $imageLinker;
