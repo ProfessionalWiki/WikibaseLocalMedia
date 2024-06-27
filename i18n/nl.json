@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"McDutchie",
 			"Romaine"
 		]
 	},
+	"wblm-desc": "Voegt ondersteuning voor lokale mediabestanden toe aan Wikibase via een speciaal gegevenstype",
 	"datatypes-type-localMedia": "Mediabestand"
 }
