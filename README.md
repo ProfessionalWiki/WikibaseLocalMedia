@@ -69,8 +69,9 @@ Finally, please consider [sponsoring the project].
 
 ### Version 1.0.4
 Released on October 9, 2024
-* Fixed MediaWiki 1.40 deprecation
-* Fixed non-English dropdown
+
+* Fixed support for non-English wikis
+* Fixed deprecation warning of MediaWiki 1.40 and later
 * Translation updates
 
 ### Version 1.0.3
