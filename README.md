@@ -67,11 +67,17 @@ Finally, please consider [sponsoring the project].
 
 ## Release notes
 
+### Version 1.0.4
+Released on October 9, 2024
+* Fixed MediaWiki 1.40 deprecation
+* Fixed non-English dropdown
+* Translation updates
+
 ### Version 1.0.3
 
 Released on March 30, 2023
 
-* Added support for MediaWiki and Wikibase 1.38 and 1.39 
+* Added support for MediaWiki and Wikibase 1.38 and 1.39
 * Translation updates
 
 ### Version 1.0.2
