@@ -93,9 +93,9 @@
 		_prioritiseMatchingFilename: function( resultList, term ) {
 			return resultList.sort( function( a, b ) {
 				// use indexOf() in favour of startsWith() for browser compatibility
-				if ( a.title.indexOf( 'File:' + term ) === 0 ) {
+				if ( a.title.indexOf( this._getFileNamespace() + ':' + term ) === 0 ) {
 					return -1;
-				} else if ( b.title.indexOf( 'File:' + term ) === 0 ) {
+				} else if ( b.title.indexOf( this._getFileNamespace() + ':' + term ) === 0 ) {
 					return 1;
 				} else {
 					return 0;
@@ -114,10 +114,10 @@
 		_createMenuItemFromSuggestion: function( suggestion, requestTerm ) {
 			suggestion = suggestion.title;
 
-			var isFile = /^File:/.test( suggestion );
+			var isFile = this._getFileNamespaceRegex().test( suggestion );
 
 			if ( isFile ) {
-				suggestion = suggestion.replace( /^File:/, '' );
+				suggestion = suggestion.replace( this._getFileNamespaceRegex(), '' );
 			}
 
 			var label = util.highlightSubstring(
@@ -163,6 +163,24 @@
 			return 'url("' + this.options.indexPhpUrl + '?title=Special:Filepath/'
 				+ encodeURIComponent( fileName )
 				+ '&width=100&height=50")';
+		},
+
+		/**
+		 * @private
+		 *
+		 * @returns {string}
+		 */
+		_getFileNamespace: function () {
+			return  mw.config.get('wgFormattedNamespaces')[6];
+		},
+
+		/**
+		 * @private
+		 *
+		 * @returns {RegExp}
+		 */
+		_getFileNamespaceRegex: function () {
+			return new RegExp( '^' + this._getFileNamespace() + ':' );
 		}
 
 	} );
