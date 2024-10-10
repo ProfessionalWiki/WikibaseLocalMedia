@@ -1,8 +1,8 @@
 # Wikibase Local Media
 
 [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/ProfessionalWiki/WikibaseLocalMedia/ci.yml?branch=master)](https://github.com/ProfessionalWiki/WikibaseLocalMedia/actions?query=workflow%3ACI)
-[![Latest Stable Version](https://poser.pugx.org/professional-wiki/wikibase-local-media/version.png)](https://packagist.org/packages/professional-wiki/wikibase-local-media)
-[![Download count](https://poser.pugx.org/professional-wiki/wikibase-local-media/d/total.png)](https://packagist.org/packages/professional-wiki/wikibase-local-media)
+[![Latest Stable Version](https://poser.pugx.org/professional-wiki/wikibase-local-media/v/stable)](https://packagist.org/packages/professional-wiki/wikibase-local-media)
+[![Download count](https://poser.pugx.org/professional-wiki/wikibase-local-media/downloads)](https://packagist.org/packages/professional-wiki/wikibase-local-media)
 ![GitHub](https://img.shields.io/github/license/ProfessionalWiki/WikibaseLocalMedia)
 
 MediaWiki extension that adds support for local media files to [Wikibase] via a new data type.
