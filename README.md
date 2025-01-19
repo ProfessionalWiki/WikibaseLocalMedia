@@ -3,13 +3,13 @@
 [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/ProfessionalWiki/WikibaseLocalMedia/ci.yml?branch=master)](https://github.com/ProfessionalWiki/WikibaseLocalMedia/actions?query=workflow%3ACI)
 [![Latest Stable Version](https://poser.pugx.org/professional-wiki/wikibase-local-media/v/stable)](https://packagist.org/packages/professional-wiki/wikibase-local-media)
 [![Download count](https://poser.pugx.org/professional-wiki/wikibase-local-media/downloads)](https://packagist.org/packages/professional-wiki/wikibase-local-media)
-![GitHub](https://img.shields.io/github/license/ProfessionalWiki/WikibaseLocalMedia)
+[![License](https://poser.pugx.org/professional-wiki/wikibase-local-media/license)](LICENSE)
 
 MediaWiki extension that adds support for local media files to [Wikibase] via a new data type.
 
-[Professional.Wiki] created and maintains Wikibase Local Media. We provide [Wikibase hosting], [Wikibase development] and [Wikibase consulting].
+[Professional Wiki] created and maintains Wikibase Local Media. We provide [Wikibase hosting], [Wikibase development], and [Wikibase consulting].
 
-[Rhizome] commissioned and funded initial development of the extension. Wikibase Local Media is an open source project and contributions are welcome!
+[Rhizome] commissioned and funded the extension's initial development. Wikibase Local Media is an open-source project, and contributions are welcome!
 
 ## Demo and screenshot
 
@@ -26,18 +26,18 @@ Also see [this animated gif](https://twitter.com/i/status/1286293710112731137).
 * [MediaWiki] 1.34 up to 1.39
 * [Wikibase Repository] REL1_34, REL1_35, REL1_36, REL1_37, REL1_38, or REL1_39
 
-See the [release notes](#release-notes) for more information on the different versions of this extension.
+For more information on the different versions of this extension, see the [release notes](#release-notes).
 
 ## Installation
 
-First install MediaWiki and Wikibase Repository.
+First, install MediaWiki and Wikibase Repository.
 
 **Using Composer (option 1/2)**
 
 The recommended way to install Wikibase Local Media is using [Composer](https://getcomposer.org) with
 [MediaWiki's built-in support for Composer](https://professional.wiki/en/articles/installing-mediawiki-extensions-with-composer).
 
-On the commandline, go to your wikis root directory. Then run these two commands:
+On the commandline, go to your wiki's root directory. Then run these two commands:
 
 ```shell script
 COMPOSER=composer.local.json composer require --no-update professional-wiki/wikibase-local-media:*
