@@ -68,6 +68,9 @@
 					timeout: 8000
 				} )
 				.done( function( response ) {
+					if ( response.query === undefined ) {
+						return;
+					}
 					var sorted = self._prioritiseMatchingFilename( response.query.search, term );
 
 					deferred.resolve( sorted, term );
