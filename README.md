@@ -58,8 +58,6 @@ wfLoadExtension( 'WikibaseLocalMedia' );
 
 You can verify the extension was enabled successfully by opening your wikis Special:Version page in your browser.
 
-Finally, please consider [sponsoring the project].
-
 ## Running the tests
 
 * PHP tests: `php tests/phpunit/phpunit.php extensions/WikibaseLocalMedia/tests/`
@@ -121,8 +119,8 @@ Released on September 26th 2020
 
 * [Initial release] for MediaWiki/Wikibase 1.34
 
-[Professional.Wiki]: https://professional.wiki
-[Wikibase]: https://wikibase.consulting/what-is-wikibase/
+[Professional Wiki]: https://professional.wiki
+[Wikibase]: https://professional.wiki/en/wikibase-wikidata-and-knowledge-graphs
 [Wikibase hosting]: https://professional.wiki/en/hosting/wikibase
 [Wikibase development]: https://professional.wiki/en/wikibase-software-development
 [Wikibase consulting]: https://wikibase.consulting/
@@ -131,5 +129,4 @@ Released on September 26th 2020
 [PHP]: https://www.php.net
 [Wikibase Repository]: https://www.mediawiki.org/wiki/Extension:Wikibase_Repository
 [LocalSettings.php]: https://www.mediawiki.org/wiki/Manual:LocalSettings.php
-[sponsoring the project]: https://github.com/sponsors/JeroenDeDauw
 [Initial release]: https://professional.wiki/en/news/wikibase-local-media
