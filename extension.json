@@ -35,10 +35,15 @@
 
 	"Hooks": {
 		"WikibaseRepoDataTypes": "Wikibase\\LocalMedia\\HookHandlers::onWikibaseRepoDataTypes",
-		"WikibaseClientDataTypes": "Wikibase\\LocalMedia\\HookHandlers::onWikibaseClientDataTypes"
+		"WikibaseClientDataTypes": "Wikibase\\LocalMedia\\HookHandlers::onWikibaseClientDataTypes",
+		"ResourceLoaderGetConfigVars": "Wikibase\\LocalMedia\\HookHandlers::onResourceLoaderGetConfigVars"
 	},
 
 	"config": {
+		"WikibaseLocalMediaRemoteApiUrl": {
+			"value": null,
+			"description": "Optional wiki API URL, works in conjunction with $wgForeignFileRepos for retrieving images from any wiki"
+		}
 	},
 
 	"ResourceFileModulePaths": {

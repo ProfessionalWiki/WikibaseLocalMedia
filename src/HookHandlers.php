@@ -5,6 +5,7 @@ declare( strict_types = 1 );
 namespace Wikibase\LocalMedia;
 
 use ValueFormatters\FormatterOptions;
+use MediaWiki\MediaWikiServices;
 
 final class HookHandlers {
 
@@ -44,4 +45,8 @@ final class HookHandlers {
 		];
 	}
 
+	public static function onResourceLoaderGetConfigVars( array &$vars ): void {
+		$config = MediaWikiServices::getInstance()->getMainConfig();
+		$vars['wgWikibaseLocalMediaRemoteApiUrl'] = $config->get( 'WikibaseLocalMediaRemoteApiUrl' );
+	}
 }
