@@ -65,7 +65,15 @@ You can verify the extension was enabled successfully by opening your wikis Spec
 
 ## Release notes
 
+### Version 1.1.0
+
+Released on February 16, 2025
+
+* [Added optional APU URL configuration variable](https://github.com/ProfessionalWiki/WikibaseLocalMedia/pull/37) `wgWikibaseLocalMediaRemoteApiUrl` (works together with `wgForeignFileRepos`)
+* Translation updates
+
 ### Version 1.0.4
+
 Released on October 9, 2024
 
 * Fixed support for non-English wikis
