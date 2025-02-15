@@ -8,6 +8,9 @@ use DataValues\StringValue;
 use PHPUnit\Framework\TestCase;
 use Wikibase\LocalMedia\WikibaseLocalMedia;
 
+/**
+ * @covers \Wikibase\LocalMedia\WikibaseLocalMedia
+ */
 class ValidationTest extends TestCase {
 
 	public function testValidationSucceeds() {
