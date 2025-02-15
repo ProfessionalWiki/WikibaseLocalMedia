@@ -14,9 +14,10 @@ module.exports = ( function( $, vv ) {
 			var notifier = this._viewNotifier,
 				$input = this.$input;
 
+			const apiUrl = mw.config.get( 'wgWikibaseLocalMediaRemoteApiUrl' ) || this._options.vocabularyLookupApiUrl;
 			$input.mediasuggester( {
-				apiUrl: this._options.vocabularyLookupApiUrl,
-				indexPhpUrl: this._options.vocabularyLookupApiUrl.replace('api.php', 'index.php'),
+				apiUrl: apiUrl,
+				indexPhpUrl: apiUrl.replace('api.php', 'index.php'),
 				namespaceId: 6
 			} );
 
