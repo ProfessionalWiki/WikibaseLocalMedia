@@ -192,7 +192,7 @@ jobs:
       - name: Install MediaWiki
         if: steps.cache-mediawiki.outputs.cache-hit != 'true'
         working-directory: ~
-        run: curl EarlyCopy/.github/workflows/installMediaWiki.sh | bash -s ${{ matrix.mw }} WikibaseLocalMedia
+        run: bash EarlyCopy/.github/workflows/installMediaWiki.sh ${{ matrix.mw }} WikibaseLocalMedia
 
       - uses: actions/checkout@v4
         with:
