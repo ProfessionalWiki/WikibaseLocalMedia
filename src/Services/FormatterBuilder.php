@@ -14,8 +14,8 @@ use Wikibase\Lib\Formatters\WikibaseValueFormatterBuilders;
 
 class FormatterBuilder {
 
-	private $formatterBuilders;
-	private $thumbLimits;
+	private WikibaseValueFormatterBuilders $formatterBuilders;
+	private array $thumbLimits;
 
 	public function __construct( WikibaseValueFormatterBuilders $formatterBuilders, array $thumbLimits ) {
 		$this->formatterBuilders = $formatterBuilders;

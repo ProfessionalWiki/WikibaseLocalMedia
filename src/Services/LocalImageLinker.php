@@ -13,4 +13,3 @@ class LocalImageLinker implements ImageLinker {
 	}
 
 }
-

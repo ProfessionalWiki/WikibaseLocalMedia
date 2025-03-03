@@ -13,7 +13,7 @@ use Wikibase\Repo\Rdf\Values\ObjectUriRdfBuilder;
  */
 class LocalMediaRdfBuilder35 extends ObjectUriRdfBuilder {
 
-	private $titleFactory;
+	private TitleFactory $titleFactory;
 
 	public function __construct( TitleFactory $titleFactory ) {
 		$this->titleFactory = $titleFactory;

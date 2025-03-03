@@ -12,8 +12,8 @@ use ValueFormatters\ValueFormatter;
 
 class ImageLinkFormatter implements ValueFormatter {
 
-	private $imageLinker;
-	private $cssClass;
+	private ImageLinker $imageLinker;
+	private string $cssClass;
 
 	public function __construct( ImageLinker $imageLinker, string $cssClass ) {
 		$this->imageLinker = $imageLinker;

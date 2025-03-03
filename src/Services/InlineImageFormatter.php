@@ -12,7 +12,6 @@ use Language;
 use Linker;
 use MediaWiki\MediaWikiServices;
 use ParserOptions;
-use RepoGroup;
 use Title;
 use ValueFormatters\ValueFormatter;
 
@@ -23,7 +22,8 @@ use ValueFormatters\ValueFormatter;
  */
 class InlineImageFormatter implements ValueFormatter {
 
-	const FALLBACK_THUMBNAIL_WIDTH = 320; // 320 the was default hardcoded value. Removed in T224189
+	// 320 the was default hardcoded value. Removed in T224189
+	private const FALLBACK_THUMBNAIL_WIDTH = 320;
 
 	/**
 	 * @var Language
@@ -115,7 +115,7 @@ class InlineImageFormatter implements ValueFormatter {
 		return $this->wrapThumb( $title, $thumb->toHtml() ) . $this->getCaptionHtml( $title, $file );
 	}
 
-	private function getThumbWidth( $thumbSize ) {
+	private function getThumbWidth( int $thumbSize ): int {
 		return $this->thumbLimits[$thumbSize] ?? self::FALLBACK_THUMBNAIL_WIDTH;
 	}
 
