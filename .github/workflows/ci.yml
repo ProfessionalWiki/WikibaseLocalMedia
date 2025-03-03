@@ -12,36 +12,30 @@ on:
 jobs:
   test:
     name: "PHPUnit: MW ${{ matrix.mw }}, PHP ${{ matrix.php }}"
+    continue-on-error: ${{ matrix.experimental }}
 
     strategy:
+      fail-fast: false
       matrix:
         include:
-          - mw: 'REL1_43'
-            php: 8.3
-          - mw: 'REL1_42'
-            php: 8.2
-          - mw: 'REL1_41'
-            php: 8.1
-          - mw: 'REL1_40'
-            php: 8.0
           - mw: 'REL1_39'
             php: 8.0
-            composer: v2
-          - mw: 'REL1_38'
-            php: 8.0
-            composer: v2
-          - mw: 'REL1_37'
-            php: 8.0
-            composer: v2
-          - mw: 'REL1_36'
-            php: 7.4
-            composer: v1
-          - mw: 'REL1_35'
-            php: 7.3
-            composer: v1
-          - mw: 'REL1_34'
-            php: 7.2
-            composer: v1
+            experimental: false
+          - mw: 'REL1_40'
+            php: 8.1
+            experimental: false
+          - mw: 'REL1_41'
+            php: 8.2
+            experimental: false
+          - mw: 'REL1_42'
+            php: 8.2
+            experimental: false
+          - mw: 'REL1_43'
+            php: 8.3
+            experimental: false
+          - mw: 'master'
+            php: 8.4
+            experimental: true
 
     runs-on: ubuntu-latest
 
@@ -56,25 +50,25 @@ jobs:
         with:
           php-version: ${{ matrix.php }}
           extensions: mbstring, intl
-          tools: composer:${{ matrix.composer }}
+          tools: composer:v2
 
       - name: Cache MediaWiki
         id: cache-mediawiki
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: |
             mediawiki
             !mediawiki/extensions/
             !mediawiki/vendor/
-          key: mw_${{ matrix.mw }}-php${{ matrix.php }}-v21
+          key: mw_${{ matrix.mw }}-php${{ matrix.php }}-v22
 
       - name: Cache Composer cache
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: ~/.composer/cache
           key: composer-php${{ matrix.php }}
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           path: EarlyCopy
 
@@ -83,7 +77,7 @@ jobs:
         working-directory: ~
         run: bash EarlyCopy/.github/workflows/installMediaWiki.sh ${{ matrix.mw }} WikibaseLocalMedia
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           path: mediawiki/extensions/WikibaseLocalMedia
 
