@@ -24,12 +24,9 @@ final class HookHandlers {
 				return WikibaseLocalMedia::getGlobalInstance()->getRdfBuilder();
 			},
 			'rdf-data-type' => static function () {
+				/** @since MediaWiki 1.37 */
 				if ( class_exists( 'Wikibase\Repo\Rdf\PropertySpecificComponentsRdfBuilder' ) ) {
 					return \Wikibase\Repo\Rdf\PropertySpecificComponentsRdfBuilder::OBJECT_PROPERTY;
-				}
-
-				if ( class_exists( 'Wikibase\Rdf\PropertyRdfBuilder' ) ) {
-					return \Wikibase\Rdf\PropertyRdfBuilder::OBJECT_PROPERTY;
 				}
 
 				return \Wikibase\Repo\Rdf\PropertyRdfBuilder::OBJECT_PROPERTY;

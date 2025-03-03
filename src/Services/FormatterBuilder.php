@@ -41,7 +41,7 @@ class FormatterBuilder {
 			case SnakFormatter::FORMAT_WIKI:
 				return new CommonsThumbnailFormatter();
 			default:
-				return $this->formatterBuilders->newStringFormatter( $format, $options );
+				return $this->formatterBuilders->newStringFormatter( $format );
 		}
 	}
 

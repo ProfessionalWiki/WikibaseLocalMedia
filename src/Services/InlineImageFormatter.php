@@ -25,30 +25,15 @@ class InlineImageFormatter implements ValueFormatter {
 	// 320 the was default hardcoded value. Removed in T224189
 	private const FALLBACK_THUMBNAIL_WIDTH = 320;
 
-	/**
-	 * @var Language
-	 */
-	private $language;
+	private Language $language;
 
-	/**
-	 * @var ParserOptions
-	 */
-	private $parserOptions;
+	private ParserOptions $parserOptions;
 
-	/**
-	 * @var array
-	 */
-	private $thumbLimits;
+	private array $thumbLimits;
 
-	/**
-	 * @var ImageLinker
-	 */
-	private $imageLinker;
+	private ImageLinker $imageLinker;
 
-	/**
-	 * @var string
-	 */
-	private $captionCssClass;
+	private string $captionCssClass;
 
 	/**
 	 * @param ParserOptions $parserOptions Options for thumbnail size
@@ -119,12 +104,7 @@ class InlineImageFormatter implements ValueFormatter {
 		return $this->thumbLimits[$thumbSize] ?? self::FALLBACK_THUMBNAIL_WIDTH;
 	}
 
-	/**
-	 * @param Title $title
-	 * @param string $thumbHtml
-	 * @return string HTML
-	 */
-	private function wrapThumb( Title $title, $thumbHtml ) {
+	private function wrapThumb( Title $title, string $thumbHtml ): string {
 		$attributes = [
 			'class' => 'image',
 			'href' => $this->imageLinker->buildUrl( $title )
@@ -137,12 +117,7 @@ class InlineImageFormatter implements ValueFormatter {
 		);
 	}
 
-	/**
-	 * @param Title $title
-	 * @param File|null $file
-	 * @return string HTML
-	 */
-	private function getCaptionHtml( Title $title, $file = null ) {
+	private function getCaptionHtml( Title $title, ?File $file = null ): string {
 		$attributes = [
 			'href' => $this->imageLinker->buildUrl( $title )
 		];
@@ -159,14 +134,10 @@ class InlineImageFormatter implements ValueFormatter {
 		);
 	}
 
-	/**
-	 * @param File $file
-	 * @return string HTML
-	 */
-	private function getFileMetaHtml( File $file ) {
+	private function getFileMetaHtml( File $file ): string {
 		return $this->language->semicolonList( [
 			$file->getDimensionsString(),
-			htmlspecialchars( $this->language->formatSize( $file->getSize() ) )
+			htmlspecialchars( $this->language->formatSize( (int)$file->getSize() ) )
 		] );
 	}
 

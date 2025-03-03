@@ -8,7 +8,6 @@ use MediaWiki\MediaWikiServices;
 use ValueValidators\ValueValidator;
 use Wikibase\LocalMedia\Services\FormatterBuilder;
 use Wikibase\LocalMedia\Services\LocalMediaRdfBuilder;
-use Wikibase\Repo\Rdf\Values\ObjectUriRdfBuilder;
 use Wikibase\Repo\WikibaseRepo;
 
 class WikibaseLocalMedia {
@@ -47,7 +46,7 @@ class WikibaseLocalMedia {
 		);
 	}
 
-	public function getRdfBuilder(): ObjectUriRdfBuilder {
+	public function getRdfBuilder(): LocalMediaRdfBuilder {
 		return new LocalMediaRdfBuilder( MediaWikiServices::getInstance()->getTitleFactory() );
 	}
 
