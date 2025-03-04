@@ -4,8 +4,8 @@ declare( strict_types = 1 );
 
 namespace Wikibase\LocalMedia;
 
-use ValueFormatters\FormatterOptions;
 use MediaWiki\MediaWikiServices;
+use ValueFormatters\FormatterOptions;
 
 final class HookHandlers {
 
@@ -13,22 +13,20 @@ final class HookHandlers {
 		$dataTypeDefinitions['PT:localMedia'] = [
 			'value-type' => 'string',
 			'expert-module' => 'jquery.valueview.experts.LocalMediaType',
-			'validator-factory-callback' => function() {
+			'validator-factory-callback' => static function () {
 				return WikibaseLocalMedia::getGlobalInstance()->getValueValidators();
 			},
-			'formatter-factory-callback' => function( $format, FormatterOptions $options ) {
-				return WikibaseLocalMedia::getGlobalInstance()->getFormatterBuilder()->newFormatter( $format, $options );
+			'formatter-factory-callback' => static function ( $format, FormatterOptions $options ) {
+				return WikibaseLocalMedia::getGlobalInstance()
+					->getFormatterBuilder()->newFormatter( $format, $options );
 			},
-			'rdf-builder-factory-callback' => function () {
+			'rdf-builder-factory-callback' => static function () {
 				return WikibaseLocalMedia::getGlobalInstance()->getRdfBuilder();
 			},
-			'rdf-data-type' => function() {
+			'rdf-data-type' => static function () {
+				/** @since MediaWiki 1.37 */
 				if ( class_exists( 'Wikibase\Repo\Rdf\PropertySpecificComponentsRdfBuilder' ) ) {
 					return \Wikibase\Repo\Rdf\PropertySpecificComponentsRdfBuilder::OBJECT_PROPERTY;
-				}
-
-				if ( class_exists( 'Wikibase\Rdf\PropertyRdfBuilder' ) ) {
-					return \Wikibase\Rdf\PropertyRdfBuilder::OBJECT_PROPERTY;
 				}
 
 				return \Wikibase\Repo\Rdf\PropertyRdfBuilder::OBJECT_PROPERTY;
@@ -39,8 +37,9 @@ final class HookHandlers {
 	public static function onWikibaseClientDataTypes( array &$dataTypeDefinitions ): void {
 		$dataTypeDefinitions['PT:localMedia'] = [
 			'value-type' => 'string',
-			'formatter-factory-callback' => function( $format, FormatterOptions $options ) {
-				return WikibaseLocalMedia::getGlobalInstance()->getFormatterBuilder()->newFormatter( $format, $options );
+			'formatter-factory-callback' => static function ( $format, FormatterOptions $options ) {
+				return WikibaseLocalMedia::getGlobalInstance()
+					->getFormatterBuilder()->newFormatter( $format, $options );
 			},
 		];
 	}

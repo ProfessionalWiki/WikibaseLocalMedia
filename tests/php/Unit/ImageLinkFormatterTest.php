@@ -21,8 +21,7 @@ class ImageLinkFormatterTest extends \MediaWikiIntegrationTestCase {
 				'class="kittens"',
 				$formatter->format( new StringValue( 'MyImage.png' ) )
 			);
-		}
-		else {
+		} else {
 			$this->assertContains(
 				'class="kittens"',
 				$formatter->format( new StringValue( 'MyImage.png' ) )

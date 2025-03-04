@@ -1,0 +1,91 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Access to undefined constant Wikibase\\Repo\\Rdf\\PropertyRdfBuilder\:\:OBJECT_PROPERTY\.$#'
+			identifier: classConstant.notFound
+			count: 1
+			path: src/HookHandlers.php
+
+		-
+			message: '#^Method Wikibase\\LocalMedia\\HookHandlers\:\:onResourceLoaderGetConfigVars\(\) has parameter \$vars with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/HookHandlers.php
+
+		-
+			message: '#^Method Wikibase\\LocalMedia\\HookHandlers\:\:onWikibaseClientDataTypes\(\) has parameter \$dataTypeDefinitions with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/HookHandlers.php
+
+		-
+			message: '#^Method Wikibase\\LocalMedia\\HookHandlers\:\:onWikibaseRepoDataTypes\(\) has parameter \$dataTypeDefinitions with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/HookHandlers.php
+
+		-
+			message: '#^Method Wikibase\\LocalMedia\\Services\\FormatterBuilder\:\:__construct\(\) has parameter \$thumbLimits with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Services/FormatterBuilder.php
+
+		-
+			message: '#^Parameter \#3 \$languageCode of class Wikibase\\LocalMedia\\Services\\InlineImageFormatter constructor expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Services/FormatterBuilder.php
+
+		-
+			message: '#^Property Wikibase\\LocalMedia\\Services\\FormatterBuilder\:\:\$thumbLimits type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Services/FormatterBuilder.php
+
+		-
+			message: '#^Instanceof between DataValues\\StringValue and DataValues\\StringValue will always evaluate to true\.$#'
+			identifier: instanceof.alwaysTrue
+			count: 1
+			path: src/Services/ImageLinkFormatter.php
+
+		-
+			message: '#^Constructor of class Wikibase\\LocalMedia\\Services\\InlineImageFormatter has an unused parameter \$languageCode\.$#'
+			identifier: constructor.unusedParameter
+			count: 1
+			path: src/Services/InlineImageFormatter.php
+
+		-
+			message: '#^Instanceof between DataValues\\StringValue and DataValues\\StringValue will always evaluate to true\.$#'
+			identifier: instanceof.alwaysTrue
+			count: 1
+			path: src/Services/InlineImageFormatter.php
+
+		-
+			message: '#^Method Wikibase\\LocalMedia\\Services\\InlineImageFormatter\:\:__construct\(\) has parameter \$thumbLimits with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Services/InlineImageFormatter.php
+
+		-
+			message: '#^Property Wikibase\\LocalMedia\\Services\\InlineImageFormatter\:\:\$thumbLimits type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Services/InlineImageFormatter.php
+
+		-
+			message: '#^Cannot call method getFullURL\(\) on MediaWiki\\Title\\Title\|null\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: src/Services/LocalMediaRdfBuilder.php
+
+		-
+			message: '#^Parameter \#1 \$text of method MediaWiki\\Title\\TitleFactory\:\:newFromText\(\) expects int\|string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Services/LocalMediaRdfBuilder.php
+
+		-
+			message: '#^Parameter \#2 \$thumbLimits of class Wikibase\\LocalMedia\\Services\\FormatterBuilder constructor expects array, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/WikibaseLocalMedia.php

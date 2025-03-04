@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<ruleset>
+	<file>src/</file>
+	<file>tests/php</file>
+
+	<arg name="extensions" value="php"/>
+
+	<rule ref="./vendor/mediawiki/mediawiki-codesniffer/MediaWiki" />
+</ruleset>

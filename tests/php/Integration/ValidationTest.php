@@ -18,8 +18,8 @@ class ValidationTest extends TestCase {
 
 		$this->assertNotEmpty( $validators );
 
-		foreach ( $validators as $validator  ) {
-			$this->assertEmpty( $validator->validate( new StringValue( 'Valid-value.png' ) )->getErrors() );
+		foreach ( $validators as $validator ) {
+			$this->assertCount( 0, $validator->validate( new StringValue( 'Valid-value.png' ) )->getErrors() );
 		}
 	}
 
@@ -30,7 +30,7 @@ class ValidationTest extends TestCase {
 
 		$errors = [];
 
-		foreach ( $validators as $validator  ) {
+		foreach ( $validators as $validator ) {
 			$errors = array_merge( $errors, $validator->validate( new StringValue( 'Invalid-value' ) )->getErrors() );
 		}
 

@@ -7,13 +7,15 @@ namespace Wikibase\LocalMedia;
 use MediaWiki\MediaWikiServices;
 use ValueValidators\ValueValidator;
 use Wikibase\LocalMedia\Services\FormatterBuilder;
-use Wikibase\LocalMedia\Services\LocalMediaRdfBuilder34;
-use Wikibase\LocalMedia\Services\LocalMediaRdfBuilder35;
+use Wikibase\LocalMedia\Services\LocalMediaRdfBuilder;
 use Wikibase\Repo\WikibaseRepo;
 
 class WikibaseLocalMedia {
 
-	protected static /* ?self */ $instance;
+	/**
+	 * @var ?self
+	 */
+	protected static $instance;
 
 	public static function getGlobalInstance(): self {
 		if ( !isset( self::$instance ) ) {
@@ -27,7 +29,7 @@ class WikibaseLocalMedia {
 		return new static();
 	}
 
-	protected final function __construct() {
+	final protected function __construct() {
 	}
 
 	/**
@@ -44,12 +46,8 @@ class WikibaseLocalMedia {
 		);
 	}
 
-	public function getRdfBuilder() {
-		if ( method_exists( MediaWikiServices::getInstance(), 'getTitleFactory' ) ) {
-			return new LocalMediaRdfBuilder35( MediaWikiServices::getInstance()->getTitleFactory() );
-		}
-
-		return new LocalMediaRdfBuilder34();
+	public function getRdfBuilder(): LocalMediaRdfBuilder {
+		return new LocalMediaRdfBuilder( MediaWikiServices::getInstance()->getTitleFactory() );
 	}
 
 }

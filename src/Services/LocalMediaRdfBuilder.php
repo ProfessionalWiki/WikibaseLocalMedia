@@ -8,12 +8,9 @@ use DataValues\DataValue;
 use TitleFactory;
 use Wikibase\Repo\Rdf\Values\ObjectUriRdfBuilder;
 
-/**
- * MediaWiki 1.35+
- */
-class LocalMediaRdfBuilder35 extends ObjectUriRdfBuilder {
+class LocalMediaRdfBuilder extends ObjectUriRdfBuilder {
 
-	private $titleFactory;
+	private TitleFactory $titleFactory;
 
 	public function __construct( TitleFactory $titleFactory ) {
 		$this->titleFactory = $titleFactory;

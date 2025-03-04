@@ -35,7 +35,7 @@ class FormattingTest extends TestCase {
 	}
 
 	private function newFormatterForFormat( string $format ): ValueFormatter {
-		return $formatter = WikibaseLocalMedia::getGlobalInstance()->getFormatterBuilder()->newFormatter(
+		return WikibaseLocalMedia::getGlobalInstance()->getFormatterBuilder()->newFormatter(
 			$format,
 			$this->newOptions()
 		);

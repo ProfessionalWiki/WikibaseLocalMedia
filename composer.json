@@ -44,16 +44,17 @@
 		"source": "https://github.com/ProfessionalWiki/WikibaseLocalMedia/issues"
 	},
 	"require": {
-		"php": ">=7.2",
+		"php": ">=7.4",
 		"composer/installers": "^2|^1.0.1"
 	},
 	"require-dev": {
-		"vimeo/psalm": "dev-master",
-		"phpstan/phpstan": "dev-master"
+		"phpstan/phpstan": "^2.1.6",
+		"mediawiki/mediawiki-codesniffer": "^46.0.0"
 	},
 	"config": {
 		"allow-plugins": {
-			"composer/installers": true
+			"composer/installers": true,
+			"dealerdirect/phpcodesniffer-composer-installer": true
 		}
 	}
 }
