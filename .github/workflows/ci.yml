@@ -189,6 +189,10 @@ jobs:
           path: ~/.composer/cache
           key: mw_${{ matrix.mw }}-php${{ matrix.php }}_v1
 
+      - uses: actions/checkout@v4
+        with:
+          path: EarlyCopy
+
       - name: Install MediaWiki
         if: steps.cache-mediawiki.outputs.cache-hit != 'true'
         working-directory: ~
