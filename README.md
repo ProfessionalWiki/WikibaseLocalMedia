@@ -58,6 +58,20 @@ wfLoadExtension( 'WikibaseLocalMedia' );
 
 You can verify the extension was enabled successfully by opening your wikis Special:Version page in your browser.
 
+## PHP Configuration
+
+Configuration can be changed via [LocalSettings.php].
+
+### Setting foreign file repo
+
+Optional wiki API URL, works in conjunction with `$wgForeignFileRepos` for retrieving images from any wiki
+
+Variable: `$wgWikibaseLocalMediaRemoteApiUrl`
+
+Default: `null`
+
+Example: `https://commons.wikimedia.org/w/api.php`
+
 ## Running the tests
 
 * PHP tests: `php tests/phpunit/phpunit.php extensions/WikibaseLocalMedia/tests/`
