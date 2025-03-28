@@ -6,6 +6,6 @@
 		]
 	},
 	"wblm-name": "{{Name}}",
-	"wblm-desc": "{{Desc|name=Wikibase Local Media|url=https://github.com/ProfessionalWiki/WikibaseLocalMedia}}",
+	"wblm-desc": "{{Desc|name=Wikibase Local Media|url=https://professional.wiki/en/extension/wikibase-local-media}}",
 	"datatypes-type-localMedia": "This is the name of the datatype."
 }

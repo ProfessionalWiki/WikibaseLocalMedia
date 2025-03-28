@@ -16,7 +16,7 @@
 		"semantic web",
 		"wikidata"
 	],
-	"homepage": "https://github.com/ProfessionalWiki/WikibaseLocalMedia",
+	"homepage": "https://professional.wiki/en/extension/wikibase-local-media",
 	"license": "GPL-2.0-or-later",
 	"authors": [
 		{
@@ -41,7 +41,8 @@
 		}
 	],
 	"support": {
-		"source": "https://github.com/ProfessionalWiki/WikibaseLocalMedia/issues"
+		"issues": "https://github.com/ProfessionalWiki/WikibaseLocalMedia/issues",
+		"source": "https://github.com/ProfessionalWiki/WikibaseLocalMedia"
 	},
 	"require": {
 		"php": ">=7.4",
