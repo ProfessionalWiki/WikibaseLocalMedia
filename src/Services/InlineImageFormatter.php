@@ -6,13 +6,13 @@ namespace Wikibase\LocalMedia\Services;
 
 use DataValues\StringValue;
 use File;
-use Html;
+use MediaWiki\Html\Html;
 use InvalidArgumentException;
 use Language;
-use Linker;
+use MediaWiki\Linker\Linker;
 use MediaWiki\MediaWikiServices;
 use ParserOptions;
-use Title;
+use MediaWiki\Title\Title;
 use ValueFormatters\ValueFormatter;
 
 /**
