@@ -5,5 +5,7 @@
 
 	<arg name="extensions" value="php"/>
 
-	<rule ref="./vendor/mediawiki/mediawiki-codesniffer/MediaWiki" />
+	<rule ref="./vendor/mediawiki/mediawiki-codesniffer/MediaWiki">
+		<exclude name="MediaWiki.Classes.UnsortedUseStatements.UnsortedUse" />
+	</rule>
 </ruleset>
