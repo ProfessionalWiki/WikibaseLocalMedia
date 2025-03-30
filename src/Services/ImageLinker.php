@@ -4,7 +4,7 @@ declare( strict_types = 1 );
 
 namespace Wikibase\LocalMedia\Services;
 
-use Title;
+use MediaWiki\Title\Title;
 
 /**
  * @license GPL-2.0-or-later

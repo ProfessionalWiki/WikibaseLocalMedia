@@ -5,7 +5,7 @@ declare( strict_types = 1 );
 namespace Wikibase\LocalMedia\Services;
 
 use DataValues\DataValue;
-use TitleFactory;
+use MediaWiki\Title\TitleFactory;
 use Wikibase\Repo\Rdf\Values\ObjectUriRdfBuilder;
 
 class LocalMediaRdfBuilder extends ObjectUriRdfBuilder {

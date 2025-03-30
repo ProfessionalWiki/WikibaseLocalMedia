@@ -4,7 +4,7 @@ declare( strict_types = 1 );
 
 namespace Wikibase\LocalMedia\Services;
 
-use Title;
+use MediaWiki\Title\Title;
 
 class LocalImageLinker implements ImageLinker {
 

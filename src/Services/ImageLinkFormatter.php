@@ -5,9 +5,9 @@ declare( strict_types = 1 );
 namespace Wikibase\LocalMedia\Services;
 
 use DataValues\StringValue;
-use Html;
+use MediaWiki\Html\Html;
 use InvalidArgumentException;
-use Title;
+use MediaWiki\Title\Title;
 use ValueFormatters\ValueFormatter;
 
 class ImageLinkFormatter implements ValueFormatter {
