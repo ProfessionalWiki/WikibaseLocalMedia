@@ -23,8 +23,8 @@ Also see [this animated gif](https://twitter.com/i/status/1286293710112731137).
 ## Platform requirements
 
 * [PHP] 7.4 or later
-* [MediaWiki] 1.39 or later
-* [Wikibase Repository] REL1_39 or later
+* [MediaWiki] 1.40 or later
+* [Wikibase Repository]
 
 For more information on the different versions of this extension, see the [release notes](#release-notes).
 
@@ -78,6 +78,14 @@ Example: `https://commons.wikimedia.org/w/api.php`
 * JS tests: `index.php?title=Special%3AJavaScriptTest&filter=jquery.ui.mediasuggester`
 
 ## Release notes
+
+### Version 2.0.0
+
+Released on March 30, 2025
+
+* Raised the minimum MediaWiki version from 1.35 to 1.40
+* Added support for MediaWiki 1.41, 1.42, 1.43, and the development version of 1.44
+* Translation updates
 
 ### Version 1.1.0
 
