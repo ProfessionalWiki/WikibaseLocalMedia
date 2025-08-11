@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"JeffreyKim"
+		]
+	},
+	"wblm-desc": "透過專用嘅數據類型將對本地媒體檔案嘅支援加入維基庫",
+	"datatypes-type-localMedia": "媒體檔案"
+}
