@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Toliño"
+		]
+	},
+	"wblm-desc": "Engade compatibilidade con ficheiros multimedia locais a Wikibase mediante un tipo de datos dedicado.",
+	"datatypes-type-localMedia": "Ficheiro multimedia"
+}
