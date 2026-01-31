@@ -27,7 +27,7 @@ class FormatterBuilder {
 
 		if ( $snakFormat->isPossibleFormat( SnakFormatter::FORMAT_HTML_VERBOSE, $format ) ) {
 			return new InlineImageFormatter(
-				RequestContext::getMain()->getOutput()->parserOptions(),
+				ParserOptions::newFromContext(RequestContext::getMain()->getOutput()),
 				$this->thumbLimits,
 				$options->getOption( ValueFormatter::OPT_LANG ),
 				new LocalImageLinker(),
