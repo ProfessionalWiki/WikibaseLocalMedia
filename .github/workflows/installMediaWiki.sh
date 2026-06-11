@@ -14,11 +14,10 @@ cd mediawiki
 # Older MediaWiki branches pin such versions; allow them here as this is a throwaway CI install.
 php -r '$f = "composer.json"; $c = json_decode( file_get_contents( $f ), true ); $c["config"]["policy"]["advisories"]["block"] = false; file_put_contents( $f, json_encode( $c, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ) . "\n" );'
 
-# Wikibase's development branch pulls in beta/dev stability dependencies.
-if [ "$MW_BRANCH" == "master" ]; then
-  composer config minimum-stability dev
-  composer config prefer-stable true
-fi
+# Wikibase's REL1_45 and later branches pull in beta/dev stability dependencies.
+# prefer-stable keeps everything that has a stable release on its stable release.
+composer config minimum-stability dev
+composer config prefer-stable true
 
 composer install
 php maintenance/install.php --dbtype sqlite --dbuser root --dbname mw --dbpath $(pwd) --pass AdminPassword WikiName AdminUser

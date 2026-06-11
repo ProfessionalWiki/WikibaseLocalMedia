@@ -91,7 +91,14 @@ jobs:
         run: composer update
 
       - name: Run PHPUnit
-        run: php tests/phpunit/phpunit.php extensions/WikibaseLocalMedia/tests/
+        run: |
+          # MediaWiki 1.46 dropped tests/phpunit/phpunit.php in favour of a generated config.
+          if [ -f tests/phpunit/phpunit.php ]; then
+            php tests/phpunit/phpunit.php extensions/WikibaseLocalMedia/tests/
+          else
+            composer phpunit:config
+            vendor/bin/phpunit extensions/WikibaseLocalMedia/tests/
+          fi
 
   PHPStan:
     name: "PHPStan: MW ${{ matrix.mw }}, PHP ${{ matrix.php }}"
