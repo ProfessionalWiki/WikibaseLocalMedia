@@ -3,12 +3,20 @@
 MW_BRANCH=$1
 EXTENSION_NAME=$2
 
-wget "https://github.com/wikimedia/mediawiki/archive/refs/heads/$MW_BRANCH.tar.gz" -nv
-
-tar -zxf $MW_BRANCH.tar.gz
-mv mediawiki-$MW_BRANCH mediawiki
+# Clone rather than download the tarball: since MediaWiki 1.46 the test runner needs
+# phpunit.xml.template, which is marked export-ignore and therefore absent from tarballs.
+git clone --depth=1 --branch="$MW_BRANCH" https://github.com/wikimedia/mediawiki.git mediawiki
 
 cd mediawiki
+
+# Composer 2.10+ refuses to install dependency versions flagged by security advisories.
+# Older MediaWiki branches pin such versions; allow them here as this is a throwaway CI install.
+php -r '$f = "composer.json"; $c = json_decode( file_get_contents( $f ), true ); $c["config"]["policy"]["advisories"]["block"] = false; file_put_contents( $f, json_encode( $c, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ) . "\n" );'
+
+# Wikibase's REL1_45 and later branches pull in beta/dev stability dependencies.
+# prefer-stable keeps everything that has a stable release on its stable release.
+composer config minimum-stability dev
+composer config prefer-stable true
 
 composer install
 php maintenance/install.php --dbtype sqlite --dbuser root --dbname mw --dbpath $(pwd) --pass AdminPassword WikiName AdminUser

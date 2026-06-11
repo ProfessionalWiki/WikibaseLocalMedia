@@ -30,6 +30,15 @@ jobs:
           - mw: 'REL1_43'
             php: 8.3
             experimental: false
+          - mw: 'REL1_44'
+            php: 8.2
+            experimental: false
+          - mw: 'REL1_45'
+            php: 8.3
+            experimental: false
+          - mw: 'REL1_46'
+            php: 8.4
+            experimental: false
           - mw: 'master'
             php: 8.4
             experimental: true
@@ -57,7 +66,7 @@ jobs:
             mediawiki
             !mediawiki/extensions/
             !mediawiki/vendor/
-          key: mw_${{ matrix.mw }}-php${{ matrix.php }}_v1
+          key: mw_${{ matrix.mw }}-php${{ matrix.php }}_v2
 
       - name: Cache Composer cache
         uses: actions/cache@v4
@@ -82,7 +91,14 @@ jobs:
         run: composer update
 
       - name: Run PHPUnit
-        run: php tests/phpunit/phpunit.php extensions/WikibaseLocalMedia/tests/
+        run: |
+          # MediaWiki 1.46 dropped tests/phpunit/phpunit.php in favour of a generated config.
+          if [ -f tests/phpunit/phpunit.php ]; then
+            php tests/phpunit/phpunit.php extensions/WikibaseLocalMedia/tests/
+          else
+            composer phpunit:config
+            vendor/bin/phpunit extensions/WikibaseLocalMedia/tests/
+          fi
 
   PHPStan:
     name: "PHPStan: MW ${{ matrix.mw }}, PHP ${{ matrix.php }}"
@@ -115,7 +131,7 @@ jobs:
             mediawiki
             mediawiki/extensions/
             mediawiki/vendor/
-          key: mw_${{ matrix.mw }}-php${{ matrix.php }}_v1
+          key: mw_${{ matrix.mw }}-php${{ matrix.php }}_v2
 
       - name: Cache Composer cache
         uses: actions/cache@v4
@@ -184,7 +200,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.composer/cache
-          key: mw_${{ matrix.mw }}-php${{ matrix.php }}_v1
+          key: mw_${{ matrix.mw }}-php${{ matrix.php }}_v2
 
       - uses: actions/checkout@v4
         with:

@@ -136,7 +136,8 @@ class InlineImageFormatter implements ValueFormatter {
 
 	private function getFileMetaHtml( File $file ): string {
 		return $this->language->semicolonList( [
-			$file->getDimensionsString(),
+			// @phpstan-ignore arguments.count ($lang required since MW 1.47, ignored on older versions)
+			$file->getDimensionsString( $this->language ),
 			htmlspecialchars( $this->language->formatSize( (int)$file->getSize() ) )
 		] );
 	}
