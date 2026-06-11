@@ -79,6 +79,13 @@ Example: `https://commons.wikimedia.org/w/api.php`
 
 ## Release notes
 
+### Version 2.0.1
+
+Released on June 12, 2026
+
+* Added support for MediaWiki 1.44, 1.45, 1.46, and 1.47
+* Translation updates
+
 ### Version 2.0.0
 
 Released on March 30, 2025
