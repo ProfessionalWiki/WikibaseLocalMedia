@@ -3,10 +3,9 @@
 MW_BRANCH=$1
 EXTENSION_NAME=$2
 
-wget "https://github.com/wikimedia/mediawiki/archive/refs/heads/$MW_BRANCH.tar.gz" -nv
-
-tar -zxf $MW_BRANCH.tar.gz
-mv mediawiki-$MW_BRANCH mediawiki
+# Clone rather than download the tarball: since MediaWiki 1.46 the test runner needs
+# phpunit.xml.template, which is marked export-ignore and therefore absent from tarballs.
+git clone --depth=1 --branch="$MW_BRANCH" https://github.com/wikimedia/mediawiki.git mediawiki
 
 cd mediawiki
 
