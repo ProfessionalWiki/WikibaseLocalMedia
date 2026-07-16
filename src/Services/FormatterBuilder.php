@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 
 namespace Wikibase\LocalMedia\Services;
 
+use ParserOptions;
 use RequestContext;
 use ValueFormatters\FormatterOptions;
 use ValueFormatters\ValueFormatter;
@@ -27,7 +28,7 @@ class FormatterBuilder {
 
 		if ( $snakFormat->isPossibleFormat( SnakFormatter::FORMAT_HTML_VERBOSE, $format ) ) {
 			return new InlineImageFormatter(
-				RequestContext::getMain()->getOutput()->parserOptions(),
+				ParserOptions::newFromContext( RequestContext::getMain() ),
 				$this->thumbLimits,
 				$options->getOption( ValueFormatter::OPT_LANG ),
 				new LocalImageLinker(),
