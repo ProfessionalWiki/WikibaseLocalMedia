@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Wizzard"
+		]
+	},
+	"wblm-desc": "Pridáva do Wikibase podporu lokálnych mediálnych súborov prostredníctvom vyhradeného dátového typu",
+	"datatypes-type-localMedia": "Mediálny súbor"
+}
