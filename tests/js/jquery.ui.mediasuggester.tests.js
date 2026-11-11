@@ -8,14 +8,19 @@
 	 * @return {jQuery}
 	 */
 	var newTestSuggester = function( mockSearchResult ) {
+		return newTestSuggesterWithApi( function() {
+			return { query: { search: mockSearchResult || [] } };
+		} );
+	};
+
+	/**
+	 * @param {Function} respond Returns the API response to the given request options
+	 * @return {jQuery}
+	 */
+	var newTestSuggesterWithApi = function( respond ) {
 		var options = {
 			ajax: function( options ) {
-				var response = { query: { search: mockSearchResult || [] } };
-
-				// This uses the search results array as a spy, and appends _requestTerm
-				response.query.search._requestTerm = options.data.srsearch;
-
-				return $.Deferred().resolve( response ).promise();
+				return $.Deferred().resolve( respond( options ) ).promise();
 			},
 			apiUrl: 'can not be empty'
 		};
@@ -47,34 +52,59 @@
 	} );
 
 	QUnit.test( 'search integration', function( assert ) {
-		var $suggester = newTestSuggester(),
+		var requestedTerm,
+			$suggester = newTestSuggesterWithApi( function( options ) {
+				requestedTerm = options.data.srsearch;
+				return { query: { search: [] } };
+			} ),
 			suggester = $suggester.data( 'mediasuggester' ),
 			input = 'Bar',
 			done = assert.async();
 
 		$suggester.val( input );
 		suggester.search().done( function( suggestions, term ) {
-			assert.strictEqual( suggestions._requestTerm, 'Bar' );
+			assert.strictEqual( requestedTerm, 'Bar' );
 			assert.strictEqual( term, input );
 
 			done();
 		} );
 	} );
 
-	QUnit.test( 'put matching file name on top of result list', function( assert ) {
-		var $suggester = newTestSuggester( [
-				{ title: 'File:mockResult_a.jpg' },
-				{ title: 'File:mockResult_b.jpg' },
-				{ title: 'File:mockResult_c.jpg' }
-			] ),
+	QUnit.test( 'search resolves with no suggestions when the API returns an error', function( assert ) {
+		var $suggester = newTestSuggesterWithApi( function() {
+				return { error: { code: 'readapidenied', info: 'You need read permission to use this module.' } };
+			} ),
 			suggester = $suggester.data( 'mediasuggester' ),
-			input = 'mockResult_b.jpg',
 			done = assert.async();
 
-		$suggester.val( input );
-		suggester.search().done( function( suggestions, term ) {
-			assert.strictEqual( suggestions[0].title, 'File:mockResult_b.jpg' );
-			assert.strictEqual( suggestions[2].title, 'File:mockResult_c.jpg' );
+		assert.timeout( 1000 );
+		$suggester.val( 'Foo' );
+		suggester.search().done( function( suggestions ) {
+			assert.deepEqual( suggestions, [] );
+			done();
+		} );
+	} );
+
+	QUnit.test( 'files starting with the search term come first, both groups in API order', function( assert ) {
+		var $suggester = newTestSuggester( [
+				{ title: 'File:Foo 1' },
+				{ title: 'File:Bar Foo' },
+				{ title: 'File:Foo 2' },
+				{ title: 'File:Foo 3' },
+				{ title: 'File:Baz foo' }
+			] ),
+			suggester = $suggester.data( 'mediasuggester' ),
+			done = assert.async();
+
+		$suggester.val( 'Foo' );
+		suggester.search().done( function( suggestions ) {
+			assert.deepEqual( suggestions, [
+				{ title: 'File:Foo 1' },
+				{ title: 'File:Foo 2' },
+				{ title: 'File:Foo 3' },
+				{ title: 'File:Bar Foo' },
+				{ title: 'File:Baz foo' }
+			] );
 			done();
 		} );
 	} );

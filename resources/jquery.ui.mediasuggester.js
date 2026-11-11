@@ -89,7 +89,7 @@
 		},
 
 		/**
-		 * Be smart on the media search results and put an exactly matching file name on top
+		 * Puts the files whose name starts with the term first; both groups keep the API's order
 		 * @private
 		 *
 		 * @param {Array} resultList Results from the search API response
@@ -101,15 +101,17 @@
 			// The comparator runs in strict mode, so `this` inside it is not the widget.
 			var filePrefix = this._getFileNamespace() + ':' + term;
 
+			// Array.prototype.sort is stable, so returning 0 within a group keeps the API order.
 			return resultList.sort( function( a, b ) {
 				// use indexOf() in favour of startsWith() for browser compatibility
-				if ( a.title.indexOf( filePrefix ) === 0 ) {
-					return -1;
-				} else if ( b.title.indexOf( filePrefix ) === 0 ) {
-					return 1;
-				} else {
+				var aMatches = a.title.indexOf( filePrefix ) === 0,
+					bMatches = b.title.indexOf( filePrefix ) === 0;
+
+				if ( aMatches === bMatches ) {
 					return 0;
 				}
+
+				return aMatches ? -1 : 1;
 			} );
 		},
 
