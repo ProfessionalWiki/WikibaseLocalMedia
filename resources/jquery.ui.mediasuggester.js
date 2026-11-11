@@ -68,12 +68,16 @@
 					timeout: 8000
 				} )
 				.done( function( response ) {
-					if ( response.query === undefined ) {
+					var hits = response.query && response.query.search;
+
+					// Resolving keeps the suggester from staying in the loading state
+					// when the API payload has no search list.
+					if ( !Array.isArray( hits ) ) {
+						deferred.resolve( [], term );
 						return;
 					}
-					var sorted = self._prioritiseMatchingFilename( response.query.search, term );
 
-					deferred.resolve( sorted, term );
+					deferred.resolve( self._prioritiseMatchingFilename( hits, term ), term );
 				} )
 				.fail( function( jqXHR, textStatus ) {
 					// Since this is a JSONP request, this will always fail with a timeout...
@@ -94,11 +98,14 @@
 		 * @return {Array}
 		 */
 		_prioritiseMatchingFilename: function( resultList, term ) {
+			// The comparator runs in strict mode, so `this` inside it is not the widget.
+			var filePrefix = this._getFileNamespace() + ':' + term;
+
 			return resultList.sort( function( a, b ) {
 				// use indexOf() in favour of startsWith() for browser compatibility
-				if ( a.title.indexOf( this._getFileNamespace() + ':' + term ) === 0 ) {
+				if ( a.title.indexOf( filePrefix ) === 0 ) {
 					return -1;
-				} else if ( b.title.indexOf( this._getFileNamespace() + ':' + term ) === 0 ) {
+				} else if ( b.title.indexOf( filePrefix ) === 0 ) {
 					return 1;
 				} else {
 					return 0;
