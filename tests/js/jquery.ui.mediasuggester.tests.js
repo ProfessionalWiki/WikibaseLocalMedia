@@ -85,20 +85,26 @@
 		} );
 	} );
 
-	QUnit.test( 'put matching file name on top of result list', function( assert ) {
+	QUnit.test( 'files starting with the search term come first, both groups in API order', function( assert ) {
 		var $suggester = newTestSuggester( [
-				{ title: 'File:mockResult_a.jpg' },
-				{ title: 'File:mockResult_b.jpg' },
-				{ title: 'File:mockResult_c.jpg' }
+				{ title: 'File:Foo 1' },
+				{ title: 'File:Bar Foo' },
+				{ title: 'File:Foo 2' },
+				{ title: 'File:Foo 3' },
+				{ title: 'File:Baz foo' }
 			] ),
 			suggester = $suggester.data( 'mediasuggester' ),
-			input = 'mockResult_b.jpg',
 			done = assert.async();
 
-		$suggester.val( input );
-		suggester.search().done( function( suggestions, term ) {
-			assert.strictEqual( suggestions[0].title, 'File:mockResult_b.jpg' );
-			assert.strictEqual( suggestions[2].title, 'File:mockResult_c.jpg' );
+		$suggester.val( 'Foo' );
+		suggester.search().done( function( suggestions ) {
+			assert.deepEqual( suggestions, [
+				{ title: 'File:Foo 1' },
+				{ title: 'File:Foo 2' },
+				{ title: 'File:Foo 3' },
+				{ title: 'File:Bar Foo' },
+				{ title: 'File:Baz foo' }
+			] );
 			done();
 		} );
 	} );
