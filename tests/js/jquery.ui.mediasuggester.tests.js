@@ -8,14 +8,19 @@
 	 * @return {jQuery}
 	 */
 	var newTestSuggester = function( mockSearchResult ) {
+		return newTestSuggesterWithApi( function() {
+			return { query: { search: mockSearchResult || [] } };
+		} );
+	};
+
+	/**
+	 * @param {Function} respond Returns the API response to the given request options
+	 * @return {jQuery}
+	 */
+	var newTestSuggesterWithApi = function( respond ) {
 		var options = {
 			ajax: function( options ) {
-				var response = { query: { search: mockSearchResult || [] } };
-
-				// This uses the search results array as a spy, and appends _requestTerm
-				response.query.search._requestTerm = options.data.srsearch;
-
-				return $.Deferred().resolve( response ).promise();
+				return $.Deferred().resolve( respond( options ) ).promise();
 			},
 			apiUrl: 'can not be empty'
 		};
@@ -47,16 +52,35 @@
 	} );
 
 	QUnit.test( 'search integration', function( assert ) {
-		var $suggester = newTestSuggester(),
+		var requestedTerm,
+			$suggester = newTestSuggesterWithApi( function( options ) {
+				requestedTerm = options.data.srsearch;
+				return { query: { search: [] } };
+			} ),
 			suggester = $suggester.data( 'mediasuggester' ),
 			input = 'Bar',
 			done = assert.async();
 
 		$suggester.val( input );
 		suggester.search().done( function( suggestions, term ) {
-			assert.strictEqual( suggestions._requestTerm, 'Bar' );
+			assert.strictEqual( requestedTerm, 'Bar' );
 			assert.strictEqual( term, input );
 
+			done();
+		} );
+	} );
+
+	QUnit.test( 'search resolves with no suggestions when the API returns an error', function( assert ) {
+		var $suggester = newTestSuggesterWithApi( function() {
+				return { error: { code: 'readapidenied', info: 'You need read permission to use this module.' } };
+			} ),
+			suggester = $suggester.data( 'mediasuggester' ),
+			done = assert.async();
+
+		assert.timeout( 1000 );
+		$suggester.val( 'Foo' );
+		suggester.search().done( function( suggestions ) {
+			assert.deepEqual( suggestions, [] );
 			done();
 		} );
 	} );
