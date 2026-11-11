@@ -50,7 +50,7 @@
 	},
 	"require-dev": {
 		"phpstan/phpstan": "^2.1.6",
-		"mediawiki/mediawiki-codesniffer": "^46.0.0"
+		"mediawiki/mediawiki-codesniffer": "^52.0.0"
 	},
 	"config": {
 		"allow-plugins": {
